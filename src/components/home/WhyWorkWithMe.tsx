@@ -2,7 +2,7 @@ import { Clock, MessageSquareText, ShieldCheck, Sparkles } from 'lucide-react'
 
 import { SectionHeading } from '@/components/shared/SectionHeading'
 import { Reveal, RevealItem } from '@/components/shared/Reveal'
-import secondaryPhoto from '@/assets/sagi-wain-secondary.jpg'
+import secondaryPhoto from '@/assets/sagi-wain-secondary.data'
 
 const points = [
   {

@@ -1,11 +1,11 @@
 import type { MediaItem } from '@/types/content'
 import { siteConfig } from '@/data/siteConfig'
 
-import thumb1 from '@/assets/media/ig-1.jpg'
-import thumb3 from '@/assets/media/ig-3.jpg'
-import thumb4 from '@/assets/media/ig-4.jpg'
-import thumb5 from '@/assets/media/ig-5.jpg'
-import thumb6 from '@/assets/media/ig-6.jpg'
+import thumb1 from '@/assets/media/ig-1.data'
+import thumb3 from '@/assets/media/ig-3.data'
+import thumb4 from '@/assets/media/ig-4.data'
+import thumb5 from '@/assets/media/ig-5.data'
+import thumb6 from '@/assets/media/ig-6.data'
 
 // Thumbnails are cropped stills from Adv. Wain's own public Instagram/TikTok
 // content (screenshots he supplied). No Facebook material has been supplied
