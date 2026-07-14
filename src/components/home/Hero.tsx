@@ -13,7 +13,7 @@ import { ArrowLeft, ShieldCheck } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { GradientBlobs } from '@/components/shared/GradientBlobs'
 import { MagneticWrap } from '@/components/shared/MagneticWrap'
-import heroPhoto from '@/assets/sagi-wain-hero.jpg'
+import heroPhoto from '@/assets/sagi-wain-hero.data'
 
 const easeOut: Easing = [0.22, 1, 0.36, 1]
 

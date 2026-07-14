@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { GradientBlobs } from '@/components/shared/GradientBlobs'
 import { Reveal, RevealItem } from '@/components/shared/Reveal'
 import { siteConfig } from '@/data/siteConfig'
-import heroPhoto from '@/assets/sagi-wain-hero.jpg'
+import heroPhoto from '@/assets/sagi-wain-hero.data'
 
 export default function About() {
   return (
@@ -26,8 +26,8 @@ export default function About() {
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">עו״ד שגיא ויין</h1>
             <p className="text-lg leading-relaxed text-white/80">
               עורך דין נדל״ן, מלווה יחידים, משפחות ומשקיעים בעסקאות נדל״ן — מבדיקת חוזה
-              ראשונית ועד סגירת העסקה. בונה נוכחות דיגיטלית וחינוך משפטי לציבור הרחב, מתוך אמונה שכל אדם
-              צריך להבין על מה הוא חותם.
+              ראשונית ועד סגירת העסקה. בונה נוכחות דיגיטלית וחינוך משפטי לציבור הרחב תחת
+              השם האישי שלו, מתוך אמונה שכל אדם צריך להבין על מה הוא חותם.
             </p>
           </Reveal>
           <Reveal delay={0.15} className="relative mx-auto w-full max-w-sm">
@@ -82,7 +82,7 @@ export default function About() {
             ז׳רגון משפטי, ובבדיקה יסודית של כל מסמך לפני שהוא נחתם — לא אחרי.
           </p>
           <p className="leading-relaxed text-muted-foreground">
-            לצד העבודה השוטףת מול לקוחות, אני יוצר תוכן משפטי ברשתות החברתיות כדי לחשוף את
+            לצד העבודה השוטפת מול לקוחות, אני יוצר תוכן משפטי ברשתות החברתיות כדי לחשוף את
             הציבור הרחב לזכויות ולסיכונים שכדאי להכיר לפני כל עסקת נדל״ן.
           </p>
           <Button asChild variant="gold" size="lg">
