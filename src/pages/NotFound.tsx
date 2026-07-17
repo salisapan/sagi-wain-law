@@ -7,10 +7,10 @@ export default function NotFound() {
   return (
     <>
       <Seo title="עמוד לא נמצא" description="העמוד המבוקש לא נמצא." />
-      <section className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-cream px-6 text-center">
-        <p className="font-display text-6xl font-semibold text-gold">404</p>
-        <h1 className="text-2xl font-semibold text-primary">העמוד לא נמצא</h1>
-        <p className="max-w-md text-muted-foreground">
+      <section className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-black/30 px-6 text-center backdrop-blur-sm">
+        <p className="font-display text-6xl font-semibold text-gradient-gold">404</p>
+        <h1 className="text-2xl font-semibold text-white">העמוד לא נמצא</h1>
+        <p className="max-w-md text-white/70">
           ייתכן שהקישור שגוי או שהעמוד הוסר. אפשר לחזור לעמוד הבית ולנווט משם.
         </p>
         <Button asChild variant="gold">

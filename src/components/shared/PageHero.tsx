@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react'
 
-import { GradientBlobs } from '@/components/shared/GradientBlobs'
 import { Reveal } from '@/components/shared/Reveal'
 
 interface PageHeroProps {
@@ -12,8 +11,7 @@ interface PageHeroProps {
 
 export function PageHero({ eyebrow, title, description, children }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-navy-radial py-20 text-white noise-overlay sm:py-28">
-      <GradientBlobs variant="cta" />
+    <section className="relative overflow-hidden bg-black/40 py-20 text-white backdrop-blur-sm sm:py-28">
       <Reveal as="section" className="container relative">
         <div className="max-w-3xl space-y-4">
           {eyebrow && (

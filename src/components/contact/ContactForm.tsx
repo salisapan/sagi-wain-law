@@ -65,9 +65,9 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-lg border border-gold/30 bg-cream p-8 text-center">
-        <h3 className="font-display text-xl font-semibold text-primary">תודה על הפנייה!</h3>
-        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+      <div className="rounded-lg border border-gold/30 bg-white/[0.03] p-8 text-center backdrop-blur-md">
+        <h3 className="font-display text-xl font-semibold text-gold-light">תודה על הפנייה!</h3>
+        <p className="mt-2 text-sm leading-relaxed text-white/70">
           קיבלתי את הפרטים שלכם ואחזור אליכם בהקדם האפשרי.
         </p>
       </div>

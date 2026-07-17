@@ -13,7 +13,7 @@ export function ArticleCard({ article }: { article: Article }) {
         </CardHeader>
         <CardContent>
           <p className="text-sm leading-relaxed text-muted-foreground">{article.excerpt}</p>
-          <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-gold-dark transition-transform duration-300 group-hover:-translate-x-1">
+          <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-gold-light transition-transform duration-300 group-hover:-translate-x-1">
             לקריאת המאמר
             <ArrowLeft className="h-3.5 w-3.5" />
           </span>

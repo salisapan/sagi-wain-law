@@ -17,7 +17,7 @@ export default function BlogIndex() {
 
       <PageHero eyebrow="מאמרים" description="תוכן משפטי בשפה פשוטה, בנושאי נדל״ן שרלוונטיים לכל אחד." title="מאמרים" />
 
-      <section className="bg-white py-16">
+      <section className="bg-black/30 py-16 backdrop-blur-sm">
         <div className="container">
           {articles.length > 0 ? (
             <Reveal stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -28,7 +28,7 @@ export default function BlogIndex() {
               ))}
             </Reveal>
           ) : (
-            <div className="mx-auto max-w-xl rounded-lg border-2 border-dashed border-gold/30 bg-cream p-12 text-center">
+            <div className="mx-auto max-w-xl rounded-lg border-2 border-dashed border-gold/30 bg-white/[0.03] p-12 text-center backdrop-blur-md">
               <BookOpen className="mx-auto h-8 w-8 text-gold/60" />
               <h2 className="mt-4 font-display text-xl font-semibold text-primary">מאמרים בדרך</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">

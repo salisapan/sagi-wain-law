@@ -12,8 +12,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Heebo', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        sans: ['Heebo', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        display: ['"Frank Ruhl Libre"', 'serif'],
+        sans: ['Assistant', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
       },
       colors: {
         border: 'hsl(var(--border))',
@@ -52,23 +52,28 @@ export default {
           foreground: 'hsl(var(--popover-foreground))',
         },
         navy: {
-          DEFAULT: '#0B1E33',
-          light: '#16304F',
-          950: '#050C16',
+          DEFAULT: '#0A0A0C',
+          light: '#141416',
+          950: '#000000',
         },
         gold: {
-          50: '#FFF6E0',
-          100: '#FBE8B0',
-          200: '#F0CC6C',
-          300: '#E0B62D',
-          DEFAULT: '#D4AF37',
-          light: '#F0CC6C',
-          dark: '#9C6F0B',
-          700: '#9C6F0B',
-          900: '#6B4A05',
+          50: '#FBEFDD',
+          100: '#F0D8AE',
+          200: '#E8C48F',
+          300: '#D2A468',
+          DEFAULT: '#B87333',
+          light: '#D89A5A',
+          dark: '#7A4A1E',
+          700: '#7A4A1E',
+          900: '#4A2C10',
         },
-        charcoal: '#1C1F26',
-        cream: '#FAF7F1',
+        sapphire: {
+          DEFAULT: '#1B3A6B',
+          light: '#3E6BB0',
+          dark: '#0E1F3D',
+        },
+        charcoal: '#0F0F11',
+        cream: '#F4EFE6',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -76,15 +81,17 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       boxShadow: {
-        gold: '0 20px 60px -18px rgba(212,175,55,0.5)',
-        'gold-lg': '0 30px 80px -20px rgba(212,175,55,0.6)',
-        navy: '0 20px 60px -18px rgba(0,0,0,0.5)',
-        'navy-lg': '0 30px 90px -20px rgba(0,0,0,0.65)',
+        gold: '0 20px 60px -18px rgba(184,115,51,0.5)',
+        'gold-lg': '0 30px 80px -20px rgba(184,115,51,0.6)',
+        navy: '0 20px 60px -18px rgba(0,0,0,0.6)',
+        'navy-lg': '0 30px 90px -20px rgba(0,0,0,0.75)',
+        sapphire: '0 20px 60px -18px rgba(27,58,107,0.5)',
       },
       backgroundImage: {
         'gold-metallic':
-          'linear-gradient(135deg, #FFF6E0 0%, #F0CC6C 20%, #D4AF37 45%, #9C6F0B 70%, #F0CC6C 88%, #FFF6E0 100%)',
-        'navy-radial': 'radial-gradient(circle at 30% 20%, #16304F 0%, #0B1E33 45%, #050C16 100%)',
+          'linear-gradient(135deg, #FBEFDD 0%, #E8C48F 20%, #B87333 45%, #7A4A1E 70%, #E8C48F 88%, #FBEFDD 100%)',
+        'navy-radial': 'radial-gradient(circle at 30% 20%, #141416 0%, #0A0A0C 45%, #000000 100%)',
+        'sapphire-radial': 'radial-gradient(circle at 30% 80%, #3E6BB0 0%, #1B3A6B 45%, #0E1F3D 100%)',
       },
       keyframes: {
         'accordion-down': {

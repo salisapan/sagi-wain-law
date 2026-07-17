@@ -20,9 +20,9 @@ export default function Contact() {
         description="פגישת היכרות ראשונית ללא עלות — נבין יחד מה נכון לעשות."
       />
 
-      <section className="bg-white py-16">
+      <section className="bg-black/30 py-16 backdrop-blur-sm">
         <div className="container grid gap-12 lg:grid-cols-5">
-          <Reveal className="gradient-border lg:col-span-3 rounded-lg border border-border bg-cream p-6 shadow-navy sm:p-8">
+          <Reveal className="gradient-border lg:col-span-3 rounded-lg border border-white/10 bg-white/[0.03] p-6 shadow-navy backdrop-blur-md sm:p-8">
             <ContactForm />
           </Reveal>
 
@@ -38,13 +38,13 @@ export default function Contact() {
                   <Icon className="h-5 w-5 text-navy" />
                 </div>
                 <div>
-                  <p className="font-medium text-primary">{label}</p>
+                  <p className="font-medium text-gold-light">{label}</p>
                   {href ? (
-                    <a href={href} className="text-sm text-muted-foreground hover:text-gold-dark">
+                    <a href={href} className="text-sm text-white/70 hover:text-gold-light">
                       {value}
                     </a>
                   ) : (
-                    <p className="text-sm text-muted-foreground">{value}</p>
+                    <p className="text-sm text-white/70">{value}</p>
                   )}
                 </div>
               </RevealItem>

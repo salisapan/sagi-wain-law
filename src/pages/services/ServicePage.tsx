@@ -31,16 +31,16 @@ export default function ServicePage() {
         </Button>
       </PageHero>
 
-      <section className="bg-white py-16">
+      <section className="bg-black/30 py-16 backdrop-blur-sm">
         <div className="container grid gap-12 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-10">
             <Reveal>
-              <h2 className="text-2xl font-semibold text-primary">מה כלול בליווי</h2>
+              <h2 className="text-2xl font-semibold text-gold-light">מה כלול בליווי</h2>
               <ul className="mt-6 space-y-4">
                 {area.whatIncluded.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-gold-dark" strokeWidth={1.75} />
-                    <span className="leading-relaxed text-charcoal">{item}</span>
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-gold-light" strokeWidth={1.75} />
+                    <span className="leading-relaxed text-white/80">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -48,7 +48,7 @@ export default function ServicePage() {
 
             <div>
               <Reveal>
-                <h2 className="text-2xl font-semibold text-primary">איך זה עובד</h2>
+                <h2 className="text-2xl font-semibold text-gold-light">איך זה עובד</h2>
               </Reveal>
               <Reveal stagger className="mt-6 space-y-6">
                 {area.process.map((step, index) => (
@@ -57,8 +57,8 @@ export default function ServicePage() {
                       {index + 1}
                     </div>
                     <div>
-                      <h3 className="font-display text-lg font-semibold text-primary">{step.title}</h3>
-                      <p className="text-sm leading-relaxed text-muted-foreground">{step.description}</p>
+                      <h3 className="font-display text-lg font-semibold text-white">{step.title}</h3>
+                      <p className="text-sm leading-relaxed text-white/70">{step.description}</p>
                     </div>
                   </RevealItem>
                 ))}
@@ -66,7 +66,7 @@ export default function ServicePage() {
             </div>
 
             <Reveal>
-              <h2 className="text-2xl font-semibold text-primary">שאלות נפוצות</h2>
+              <h2 className="text-2xl font-semibold text-gold-light">שאלות נפוצות</h2>
               <Accordion type="single" collapsible className="mt-4">
                 {area.faq.map((item) => (
                   <AccordionItem key={item.question} value={item.question}>
@@ -79,9 +79,9 @@ export default function ServicePage() {
           </div>
 
           <Reveal as="section" className="space-y-6">
-            <div className="gradient-border rounded-lg border border-gold/30 bg-cream p-6 shadow-gold">
-              <h3 className="font-display text-lg font-semibold text-primary">רוצים לבדוק את המקרה שלכם?</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            <div className="gradient-border rounded-lg border border-gold/30 bg-white/[0.03] p-6 backdrop-blur-md shadow-gold">
+              <h3 className="font-display text-lg font-semibold text-white">רוצים לבדוק את המקרה שלכם?</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/70">
                 פגישת היכרות ראשונית ללא עלות — נבין יחד מה נכון לעשות בעסקה שלכם.
               </p>
               <Button asChild variant="gold" className="mt-4 w-full">
@@ -90,15 +90,15 @@ export default function ServicePage() {
             </div>
 
             <div>
-              <h3 className="font-display text-lg font-semibold text-primary">תחומי התמחות נוספים</h3>
+              <h3 className="font-display text-lg font-semibold text-white">תחומי התמחות נוספים</h3>
               <ul className="mt-4 space-y-2">
                 {otherAreas.map((a) => (
                   <li key={a.slug}>
                     <Link
                       to={`/services/${a.slug}`}
-                      className="flex items-center gap-2 text-sm text-charcoal transition-colors hover:text-gold-dark"
+                      className="flex items-center gap-2 text-sm text-white/80 transition-colors hover:text-gold-light"
                     >
-                      <a.icon className="h-4 w-4 text-gold-dark" strokeWidth={1.5} />
+                      <a.icon className="h-4 w-4 text-gold-light" strokeWidth={1.5} />
                       {a.navTitle}
                     </Link>
                   </li>

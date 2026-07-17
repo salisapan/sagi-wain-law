@@ -21,7 +21,7 @@ export default function Media() {
         description="קטעים נבחרים מהתוכן השוטף שלי באינסטגרם ובטיקטוק — נדל״ן, חוזים ושכירות בשפה פשוטה."
       />
 
-      <section className="bg-white py-16">
+      <section className="bg-black/30 py-16 backdrop-blur-sm">
         <Reveal stagger className="container grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {mediaItems.map((item) => (
             <RevealItem key={item.id}>
@@ -30,8 +30,8 @@ export default function Media() {
           ))}
         </Reveal>
 
-        <Reveal className="container mt-14 flex flex-col items-center gap-4 rounded-xl border border-gold/20 bg-cream p-8 text-center">
-          <p className="text-sm text-muted-foreground">
+        <Reveal className="container mt-14 flex flex-col items-center gap-4 rounded-xl border border-gold/20 bg-white/[0.03] p-8 text-center backdrop-blur-md">
+          <p className="text-sm text-white/70">
             העמודים מתעדכנים באופן שוטף בתוכן חדש — מוזמנים לעקוב לתוכן נוסף.
           </p>
           <div className="flex flex-wrap justify-center gap-3">

@@ -4,35 +4,35 @@
 
 @layer base {
   :root {
-    --background: 40 47% 96%;
-    --foreground: 222 15% 13%;
+    --background: 0 0% 4%;
+    --foreground: 40 30% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222 15% 13%;
+    --card: 0 0% 7%;
+    --card-foreground: 40 30% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 15% 13%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 40 30% 92%;
 
-    --primary: 212 65% 12%;
-    --primary-light: 213 56% 20%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 29 57% 46%;
+    --primary-light: 34 70% 58%;
+    --primary-foreground: 0 0% 8%;
 
-    --secondary: 40 25% 92%;
-    --secondary-foreground: 212 65% 12%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 40 30% 92%;
 
-    --accent: 46 65% 52%;
-    --accent-light: 44 81% 68%;
-    --accent-foreground: 212 65% 12%;
+    --accent: 34 65% 62%;
+    --accent-light: 36 75% 72%;
+    --accent-foreground: 0 0% 8%;
 
-    --muted: 40 20% 92%;
-    --muted-foreground: 220 9% 40%;
+    --muted: 0 0% 9%;
+    --muted-foreground: 35 10% 62%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 15% 85%;
-    --input: 40 15% 85%;
-    --ring: 46 65% 52%;
+    --border: 35 12% 18%;
+    --input: 35 12% 18%;
+    --ring: 29 57% 46%;
 
     --radius: 0.5rem;
   }
@@ -50,8 +50,28 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-feature-settings: 'kern' 1;
-    background-image: radial-gradient(rgba(11, 30, 51, 0.05) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
     background-size: 28px 28px;
+    cursor: none;
+  }
+
+  * {
+    cursor: none !important;
+  }
+
+  input,
+  textarea,
+  select {
+    cursor: text !important;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   h1,
@@ -104,7 +124,7 @@
     inset: 0;
     padding: 1px;
     border-radius: inherit;
-    background: linear-gradient(135deg, rgba(240, 204, 108, 0.8), rgba(156, 111, 11, 0.15), rgba(240, 204, 108, 0.6));
+    background: linear-gradient(135deg, rgba(232, 196, 143, 0.8), rgba(122, 74, 30, 0.15), rgba(232, 196, 143, 0.6));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -125,6 +145,27 @@ html.a11y-contrast {
 html.a11y-contrast body {
   background: #ffffff;
   color: #000000;
+  cursor: auto;
+}
+
+html.a11y-contrast * {
+  cursor: auto !important;
+}
+
+html.a11y-contrast .cinematic-scene,
+html.a11y-contrast .cinematic-cursor {
+  display: none !important;
+}
+
+@media (pointer: coarse) {
+  .cinematic-cursor {
+    display: none;
+  }
+
+  body,
+  * {
+    cursor: auto !important;
+  }
 }
 
 html.a11y-underline a {

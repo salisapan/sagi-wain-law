@@ -32,7 +32,7 @@ export function AccessibilityWidget() {
   return (
     <div className="fixed bottom-6 end-6 z-40">
       {open && (
-        <div className="mb-3 w-72 rounded-lg border border-border bg-white p-4 shadow-xl">
+        <div className="mb-3 w-72 rounded-lg border border-white/10 bg-navy/95 p-4 text-white/90 shadow-navy-lg backdrop-blur-xl">
           <div className="mb-3 flex items-center justify-between">
             <h2 className="font-display text-base font-semibold text-primary">נגישות</h2>
             <button

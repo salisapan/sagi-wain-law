@@ -18,10 +18,10 @@ import { cn } from '@/lib/utils'
 
 function NavItem({ to, end, children }: { to: string; end?: boolean; children: React.ReactNode }) {
   return (
-    <NavLink to={to} end={end} className="group relative px-1 py-2 text-sm font-medium text-charcoal transition-colors hover:text-gold-dark">
+    <NavLink to={to} end={end} className="group relative px-1 py-2 text-sm font-medium text-white/85 transition-colors hover:text-gold-light">
       {({ isActive }) => (
         <>
-          <span className={isActive ? 'text-gold-dark' : undefined}>{children}</span>
+          <span className={isActive ? 'text-gold-light' : undefined}>{children}</span>
           <span
             className={cn(
               'absolute inset-x-0 -bottom-0.5 h-[2px] origin-center scale-x-0 bg-gold-metallic transition-transform duration-300 group-hover:scale-x-100',
@@ -50,8 +50,8 @@ export function Header() {
       className={cn(
         'sticky top-0 z-40 transition-all duration-500',
         scrolled
-          ? 'border-b border-gold/20 bg-cream/90 shadow-navy backdrop-blur-xl'
-          : 'border-b border-transparent bg-cream/70 backdrop-blur-md',
+          ? 'border-b border-gold/20 bg-navy/90 shadow-navy backdrop-blur-xl'
+          : 'border-b border-transparent bg-navy/50 backdrop-blur-md',
       )}
     >
       <div className="container flex h-20 items-center justify-between">
@@ -77,7 +77,7 @@ export function Header() {
                         <NavigationMenuLink asChild>
                           <Link
                             to={`/services/${area.slug}`}
-                            className="block rounded-md px-3 py-2 text-sm text-charcoal transition-colors hover:bg-secondary hover:text-gold-dark"
+                            className="block rounded-md px-3 py-2 text-sm text-white/85 transition-colors hover:bg-white/5 hover:text-gold-light"
                           >
                             {area.navTitle}
                           </Link>
@@ -113,12 +113,12 @@ export function Header() {
             </SheetHeader>
             <nav className="mt-8 flex flex-col gap-1">
               <SheetClose asChild>
-                <NavLink to="/" end className="rounded-md px-3 py-3 text-base font-medium text-charcoal hover:bg-secondary">
+                <NavLink to="/" end className="rounded-md px-3 py-3 text-base font-medium text-white/85 hover:bg-white/5">
                   בית
                 </NavLink>
               </SheetClose>
               <SheetClose asChild>
-                <NavLink to="/about" className="rounded-md px-3 py-3 text-base font-medium text-charcoal hover:bg-secondary">
+                <NavLink to="/about" className="rounded-md px-3 py-3 text-base font-medium text-white/85 hover:bg-white/5">
                   אודות
                 </NavLink>
               </SheetClose>
@@ -129,24 +129,24 @@ export function Header() {
                 <SheetClose asChild key={area.slug}>
                   <NavLink
                     to={`/services/${area.slug}`}
-                    className="rounded-md px-3 py-3 text-base font-medium text-charcoal hover:bg-secondary"
+                    className="rounded-md px-3 py-3 text-base font-medium text-white/85 hover:bg-white/5"
                   >
                     {area.navTitle}
                   </NavLink>
                 </SheetClose>
               ))}
               <SheetClose asChild>
-                <NavLink to="/articles" className="mt-4 rounded-md px-3 py-3 text-base font-medium text-charcoal hover:bg-secondary">
+                <NavLink to="/articles" className="mt-4 rounded-md px-3 py-3 text-base font-medium text-white/85 hover:bg-white/5">
                   מאמרים
                 </NavLink>
               </SheetClose>
               <SheetClose asChild>
-                <NavLink to="/media" className="rounded-md px-3 py-3 text-base font-medium text-charcoal hover:bg-secondary">
+                <NavLink to="/media" className="rounded-md px-3 py-3 text-base font-medium text-white/85 hover:bg-white/5">
                   מדיה
                 </NavLink>
               </SheetClose>
               <SheetClose asChild>
-                <NavLink to="/testimonials" className="rounded-md px-3 py-3 text-base font-medium text-charcoal hover:bg-secondary">
+                <NavLink to="/testimonials" className="rounded-md px-3 py-3 text-base font-medium text-white/85 hover:bg-white/5">
                   עדויות
                 </NavLink>
               </SheetClose>

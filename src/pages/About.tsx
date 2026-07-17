@@ -3,7 +3,6 @@ import { GraduationCap, Handshake, Scale } from 'lucide-react'
 
 import { Seo } from '@/components/shared/Seo'
 import { Button } from '@/components/ui/button'
-import { GradientBlobs } from '@/components/shared/GradientBlobs'
 import { Reveal, RevealItem } from '@/components/shared/Reveal'
 import { siteConfig } from '@/data/siteConfig'
 import heroPhoto from '@/assets/sagi-wain-hero.data'
@@ -16,8 +15,7 @@ export default function About() {
         description="עו״ד שגיא ויין — רקע מקצועי, השכלה ותחומי עיסוק בליווי משפטי בעסקאות נדל״ן."
       />
 
-      <section className="relative overflow-hidden bg-navy-radial py-20 text-white noise-overlay sm:py-28">
-        <GradientBlobs />
+      <section className="relative overflow-hidden bg-black/40 py-20 text-white backdrop-blur-sm sm:py-28">
         <div className="container relative grid gap-12 lg:grid-cols-2 lg:items-center">
           <Reveal className="space-y-4">
             <span className="inline-block text-sm font-semibold uppercase tracking-wide text-gold-light">
@@ -41,7 +39,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-cream py-20">
+      <section className="bg-black/30 py-20 backdrop-blur-sm">
         <Reveal stagger className="container grid gap-8 sm:grid-cols-3">
           {[
             {
@@ -61,27 +59,27 @@ export default function About() {
             },
           ].map(({ icon: Icon, title, text }) => (
             <RevealItem key={title}>
-              <div className="gradient-border h-full rounded-lg border border-border bg-white p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-gold">
+              <div className="gradient-border h-full rounded-lg border border-white/10 bg-white/[0.03] p-6 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:bg-white/[0.06] hover:shadow-gold">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-metallic bg-[length:200%_auto] shadow-gold">
                   <Icon className="h-6 w-6 text-navy" strokeWidth={1.75} />
                 </div>
-                <h3 className="mt-3 font-display text-lg font-semibold text-primary">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
+                <h3 className="mt-3 font-display text-lg font-semibold text-gold-light">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/70">{text}</p>
               </div>
             </RevealItem>
           ))}
         </Reveal>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-black/10 py-20">
         <Reveal className="container max-w-3xl space-y-6">
-          <h2 className="text-3xl font-extrabold tracking-tight text-primary">איך אני עובד</h2>
-          <p className="leading-relaxed text-muted-foreground">
+          <h2 className="text-3xl font-extrabold tracking-tight text-white">איך אני עובד</h2>
+          <p className="leading-relaxed text-white/70">
             כל עסקת נדל״ן מתחילה בהבנה — של הצרכים שלכם, של הסיכונים בעסקה הספציפית, ושל מה
             שבאמת חשוב לכם להשיג. אני מאמין בליווי אישי וזמין, בהסברים בשפה פשוטה במקום
             ז׳רגון משפטי, ובבדיקה יסודית של כל מסמך לפני שהוא נחתם — לא אחרי.
           </p>
-          <p className="leading-relaxed text-muted-foreground">
+          <p className="leading-relaxed text-white/70">
             לצד העבודה השוטפת מול לקוחות, אני יוצר תוכן משפטי ברשתות החברתיות כדי לחשוף את
             הציבור הרחב לזכויות ולסיכונים שכדאי להכיר לפני כל עסקת נדל״ן.
           </p>

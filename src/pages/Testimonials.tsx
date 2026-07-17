@@ -15,21 +15,21 @@ export default function Testimonials() {
 
       <PageHero eyebrow="עדויות" title="מה אומרים הלקוחות" description="עדויות אמיתיות מלקוחות שליוויתי בעסקאות נדל״ן." />
 
-      <section className="bg-white py-16">
+      <section className="bg-black/30 py-16 backdrop-blur-sm">
         <Reveal className="container">
           {testimonials.length > 0 ? (
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {testimonials.map((t) => (
                 <Card key={t.name} className="p-6">
-                  <Quote className="h-6 w-6 text-gold" />
-                  <p className="mt-4 text-sm leading-relaxed text-charcoal">{t.quote}</p>
-                  <p className="mt-4 text-sm font-semibold text-primary">{t.name}</p>
+                  <Quote className="h-6 w-6 text-gold-light" />
+                  <p className="mt-4 text-sm leading-relaxed text-white/80">{t.quote}</p>
+                  <p className="mt-4 text-sm font-semibold text-gold-light">{t.name}</p>
                   <p className="text-xs text-muted-foreground">{t.role}</p>
                 </Card>
               ))}
             </div>
           ) : (
-            <div className="mx-auto max-w-xl rounded-lg border-2 border-dashed border-gold/30 bg-cream p-12 text-center">
+            <div className="mx-auto max-w-xl rounded-lg border-2 border-dashed border-gold/30 bg-white/[0.03] p-12 text-center backdrop-blur-md">
               <Quote className="mx-auto h-8 w-8 text-gold/60" />
               <h2 className="mt-4 font-display text-xl font-semibold text-primary">
                 העדויות בדרך לכאן
