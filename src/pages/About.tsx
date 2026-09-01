@@ -3,9 +3,9 @@ import { GraduationCap, Handshake, Scale } from 'lucide-react'
 
 import { Seo } from '@/components/shared/Seo'
 import { Button } from '@/components/ui/button'
-import { Logo } from '@/components/shared/Logo'
 import { Reveal, RevealItem } from '@/components/shared/Reveal'
 import { siteConfig } from '@/data/siteConfig'
+import sagiPortrait from '@/assets/about/sagi-portrait.data'
 
 export default function About() {
   return (
@@ -30,9 +30,15 @@ export default function About() {
           </Reveal>
           <Reveal delay={0.15} className="relative mx-auto flex w-full max-w-sm">
             <div className="absolute -inset-4 rounded-2xl bg-gold-metallic bg-[length:200%_auto] opacity-30 blur-2xl animate-gradient-x" />
-            <div className="relative flex aspect-[4/5] w-full flex-col items-center justify-center gap-6 rounded-2xl border border-gold/30 bg-navy-radial shadow-gold-lg">
-              <Logo className="h-24 w-24" />
-              <span className="font-display text-xl font-semibold text-gradient-gold">עו״ד שגיא ויין</span>
+            <div className="gradient-border relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-gold/30 shadow-gold-lg">
+              <img
+                src={sagiPortrait}
+                alt="עו״ד שגיא ויין"
+                className="h-full w-full object-cover object-top"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent p-5 pt-12">
+                <span className="font-display text-lg font-semibold text-white">עו״ד שגיא ויין</span>
+              </div>
             </div>
           </Reveal>
         </div>
