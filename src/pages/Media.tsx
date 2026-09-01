@@ -1,11 +1,20 @@
 import { Seo } from '@/components/shared/Seo'
 import { PageHero } from '@/components/shared/PageHero'
-import { Reveal, RevealItem } from '@/components/shared/Reveal'
+import { Reveal } from '@/components/shared/Reveal'
 import { Button } from '@/components/ui/button'
-import { MediaCard } from '@/components/media/MediaCard'
+import { CardFanCarousel } from '@/components/ui/card-fan-carousel'
 import { InstagramIcon, TikTokIcon } from '@/components/shared/SocialIcons'
 import { mediaItems } from '@/data/media'
 import { siteConfig } from '@/data/siteConfig'
+
+const fanCards = mediaItems.map((item) => ({
+  imgUrl: item.thumbnail,
+  alt: item.caption,
+  linkUrl: item.href,
+  caption: item.caption,
+  views: item.views,
+  platform: item.platform,
+}))
 
 export default function Media() {
   return (
@@ -22,15 +31,11 @@ export default function Media() {
       />
 
       <section className="bg-black/30 py-16 backdrop-blur-sm">
-        <Reveal stagger className="container grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {mediaItems.map((item) => (
-            <RevealItem key={item.id}>
-              <MediaCard item={item} />
-            </RevealItem>
-          ))}
+        <Reveal>
+          <CardFanCarousel cards={fanCards} />
         </Reveal>
 
-        <Reveal className="container mt-14 flex flex-col items-center gap-4 rounded-xl border border-gold/20 bg-white/[0.03] p-8 text-center backdrop-blur-md">
+        <Reveal className="container mt-10 flex flex-col items-center gap-4 rounded-xl border border-gold/20 bg-white/[0.03] p-8 text-center backdrop-blur-md">
           <p className="text-sm text-white/70">
             העמודים מתעדכנים באופן שוטף בתוכן חדש — מוזמנים לעקוב לתוכן נוסף.
           </p>
