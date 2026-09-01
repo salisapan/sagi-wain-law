@@ -67,7 +67,7 @@ export function CinematicGrid() {
   return (
     <>
       <div className="pointer-events-none fixed inset-x-0 top-[70px] z-[5] h-px w-full bg-white/10" />
-      <div className="pointer-events-none fixed inset-y-0 start-10 end-10 z-[5] flex h-screen justify-between">
+      <div className="pointer-events-none fixed inset-y-0 start-10 end-10 z-[5] flex justify-between">
         {lines.map((i) => (
           <div
             key={i}

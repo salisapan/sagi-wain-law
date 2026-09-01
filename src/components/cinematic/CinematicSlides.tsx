@@ -80,8 +80,8 @@ export function CinematicSlides() {
   })
 
   return (
-    <div ref={containerRef} data-cinematic-track className="relative h-[900vh]">
-      <div className="sticky top-0 flex h-screen w-full flex-col justify-end overflow-hidden px-6 pb-10 sm:px-10 lg:px-16">
+    <div ref={containerRef} data-cinematic-track className="relative h-[500vh] sm:h-[700vh] lg:h-[900vh]">
+      <div className="sticky top-0 flex h-dvh w-full flex-col justify-end overflow-hidden px-6 pb-10 sm:px-10 lg:px-16">
         {cinematicSlides.map((slide, index) => {
           const active = activeIndex === index
           return (
