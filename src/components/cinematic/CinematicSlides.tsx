@@ -4,15 +4,16 @@ import { motion, useMotionValueEvent, useScroll, type Easing } from 'framer-moti
 
 import { Button } from '@/components/ui/button'
 import { cinematicSlides } from '@/lib/cinematicContent'
-import heroPhoto from '@/assets/sagi-wain-hero.data'
 
 const easeOut: Easing = [0.22, 1, 0.36, 1]
 
+// Contiguous, no gaps — every point in the 900vh scroll track has an active
+// slide, so the background never scrolls past with the text area blank.
 const ACTIVE_RANGES: [number, number][] = [
-  [0, 0.14],
-  [0.28, 0.42],
-  [0.56, 0.7],
-  [0.82, 1.01],
+  [0, 0.25],
+  [0.25, 0.5],
+  [0.5, 0.75],
+  [0.75, 1.001],
 ]
 
 function activeIndexFromProgress(progress: number): number | null {
@@ -28,7 +29,7 @@ function KineticTitle({ text, active }: { text: string; active: boolean }) {
   let charCounter = 0
 
   return (
-    <h1 className="font-display text-4xl font-medium leading-[1.1] tracking-tight text-[#fff6ed] sm:text-5xl lg:text-6xl">
+    <h1 className="font-display text-4xl font-semibold leading-[1.1] tracking-tight text-[#fff6ed] [text-shadow:0_4px_24px_rgba(0,0,0,0.85)] sm:text-5xl lg:text-6xl">
       {words.map((word, wordIndex) => {
         const chars = Array.from(word)
         const wordStartIndex = charCounter
@@ -90,30 +91,10 @@ export function CinematicSlides() {
                 active ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
               }`}
             >
-              <div className="me-auto ms-0 max-w-3xl pe-6 sm:pe-16">
+              <div className="me-auto ms-0 max-w-3xl rounded-3xl border border-white/5 bg-black/35 p-6 backdrop-blur-md sm:p-8 sm:pe-16">
                 <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.3em] text-gold-200">
                   {slide.label}
                 </span>
-
-                {index === 1 && (
-                  <div
-                    className="mb-6 aspect-square w-40 overflow-hidden rounded-sm border border-white/10 sm:w-56"
-                    style={{
-                      clipPath: active ? 'inset(0 0 0% 0)' : 'inset(0 0 100% 0)',
-                      transition: 'clip-path 1.8s cubic-bezier(0.16, 1, 0.3, 1)',
-                    }}
-                  >
-                    <img
-                      src={heroPhoto}
-                      alt="עו״ד שגיא ויין"
-                      className="h-full w-full object-cover"
-                      style={{
-                        transform: active ? 'scale(1)' : 'scale(1.15)',
-                        transition: 'transform 1.8s cubic-bezier(0.16, 1, 0.3, 1)',
-                      }}
-                    />
-                  </div>
-                )}
 
                 <KineticTitle text={slide.title} active={active} />
 
@@ -121,7 +102,7 @@ export function CinematicSlides() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={active ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                   transition={{ duration: 0.8, ease: easeOut, delay: 0.4 }}
-                  className="mt-6 grid gap-4 text-base leading-relaxed text-[#d1d5db] sm:grid-cols-2 sm:text-lg"
+                  className="mt-6 grid gap-4 text-base leading-relaxed text-white/90 [text-shadow:0_2px_12px_rgba(0,0,0,0.6)] sm:grid-cols-2 sm:text-lg"
                 >
                   <p>{slide.columnA}</p>
                   <p>{slide.columnB}</p>

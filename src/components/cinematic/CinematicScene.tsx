@@ -11,8 +11,8 @@ import { getHomeScrollProgress } from '@/lib/cinematicScroll'
 const ASSET_BASE_URL = 'https://api.getlayers.ai/storage/v1/object/public/public/assets/laocoon-59f84455c6'
 const GLB_URL = `${ASSET_BASE_URL}/bronze_horse.glb`
 
-const SPARK_COUNT_FULL = 450
-const SPARK_COUNT_LOW = 180
+const SPARK_COUNT_FULL = 280
+const SPARK_COUNT_LOW = 110
 
 interface SparkDatum {
   speedX: number
@@ -74,7 +74,7 @@ export function CinematicScene() {
     try {
       renderer = new THREE.WebGLRenderer({
         canvas,
-        antialias: true,
+        antialias: !isLowPower,
         alpha: false,
         powerPreference: 'high-performance',
       })
@@ -82,7 +82,7 @@ export function CinematicScene() {
       return
     }
     renderer.setSize(sizes.width, sizes.height)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isLowPower ? 1.5 : 2))
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isLowPower ? 1.5 : 1.75))
     renderer.shadowMap.enabled = !isLowPower
     renderer.shadowMap.type = THREE.PCFSoftShadowMap
     renderer.toneMapping = THREE.ACESFilmicToneMapping
@@ -96,8 +96,8 @@ export function CinematicScene() {
     keyLight.angle = Math.PI / 4
     keyLight.penumbra = 0.9
     keyLight.castShadow = !isLowPower
-    keyLight.shadow.mapSize.width = isLowPower ? 1024 : 2048
-    keyLight.shadow.mapSize.height = isLowPower ? 1024 : 2048
+    keyLight.shadow.mapSize.width = isLowPower ? 1024 : 1536
+    keyLight.shadow.mapSize.height = isLowPower ? 1024 : 1536
     keyLight.shadow.camera.near = 1.0
     keyLight.shadow.camera.far = 15
     keyLight.shadow.bias = -0.001
@@ -239,7 +239,7 @@ export function CinematicScene() {
       camera.aspect = sizes.width / sizes.height
       camera.updateProjectionMatrix()
       renderer.setSize(sizes.width, sizes.height)
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, isLowPower ? 1.5 : 2))
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, isLowPower ? 1.5 : 1.75))
       shaderUniforms.uResolution.value.set(sizes.width, sizes.height)
     }
     window.addEventListener('resize', handleResize)
@@ -250,7 +250,7 @@ export function CinematicScene() {
       if (mixer) mixer.update(deltaTime)
 
       const targetScroll = isHomeRef.current ? getHomeScrollProgress() : 0
-      currentScroll += (targetScroll - currentScroll) * 0.025
+      currentScroll += (targetScroll - currentScroll) * 0.12
 
       mouseX += (targetMouseX - mouseX) * 0.05
       mouseY += (targetMouseY - mouseY) * 0.05
@@ -317,7 +317,7 @@ export function CinematicScene() {
         targetLookAt = new THREE.Vector3(0, -0.1, 0)
       }
 
-      camera.position.lerp(targetPos, 0.025)
+      camera.position.lerp(targetPos, 0.09)
       camera.lookAt(targetLookAt)
 
       shaderUniforms.uTime.value = clock.getElapsedTime()

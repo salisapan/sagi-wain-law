@@ -3,9 +3,9 @@ import { GraduationCap, Handshake, Scale } from 'lucide-react'
 
 import { Seo } from '@/components/shared/Seo'
 import { Button } from '@/components/ui/button'
+import { Logo } from '@/components/shared/Logo'
 import { Reveal, RevealItem } from '@/components/shared/Reveal'
 import { siteConfig } from '@/data/siteConfig'
-import heroPhoto from '@/assets/sagi-wain-hero.data'
 
 export default function About() {
   return (
@@ -28,13 +28,12 @@ export default function About() {
               השם האישי שלו, מתוך אמונה שכל אדם צריך להבין על מה הוא חותם.
             </p>
           </Reveal>
-          <Reveal delay={0.15} className="relative mx-auto w-full max-w-sm">
+          <Reveal delay={0.15} className="relative mx-auto flex w-full max-w-sm">
             <div className="absolute -inset-4 rounded-2xl bg-gold-metallic bg-[length:200%_auto] opacity-30 blur-2xl animate-gradient-x" />
-            <img
-              src={heroPhoto}
-              alt="עו״ד שגיא ויין"
-              className="relative aspect-[4/5] w-full rounded-2xl border border-gold/30 object-cover shadow-gold-lg"
-            />
+            <div className="relative flex aspect-[4/5] w-full flex-col items-center justify-center gap-6 rounded-2xl border border-gold/30 bg-navy-radial shadow-gold-lg">
+              <Logo className="h-24 w-24" />
+              <span className="font-display text-xl font-semibold text-gradient-gold">עו״ד שגיא ויין</span>
+            </div>
           </Reveal>
         </div>
       </section>
