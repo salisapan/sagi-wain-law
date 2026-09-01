@@ -1,20 +1,13 @@
 import { Seo } from '@/components/shared/Seo'
 import { PageHero } from '@/components/shared/PageHero'
-import { Reveal } from '@/components/shared/Reveal'
+import { Reveal, RevealItem } from '@/components/shared/Reveal'
 import { Button } from '@/components/ui/button'
-import { CardFanCarousel } from '@/components/ui/card-fan-carousel'
+import { MediaCard } from '@/components/media/MediaCard'
 import { InstagramIcon, TikTokIcon } from '@/components/shared/SocialIcons'
 import { mediaItems } from '@/data/media'
 import { siteConfig } from '@/data/siteConfig'
 
-const fanCards = mediaItems.map((item) => ({
-  imgUrl: item.thumbnail,
-  alt: item.caption,
-  linkUrl: item.href,
-  caption: item.caption,
-  views: item.views,
-  platform: item.platform,
-}))
+const [featuredItem, ...restItems] = mediaItems
 
 export default function Media() {
   return (
@@ -31,8 +24,20 @@ export default function Media() {
       />
 
       <section className="bg-black/30 py-16 backdrop-blur-sm">
-        <Reveal>
-          <CardFanCarousel cards={fanCards} />
+        <Reveal
+          stagger
+          className="container grid auto-rows-[140px] grid-cols-2 gap-4 [grid-auto-flow:dense] sm:auto-rows-[160px] sm:gap-5 md:auto-rows-[180px] lg:grid-cols-4 lg:auto-rows-[190px] xl:auto-rows-[220px]"
+        >
+          {featuredItem && (
+            <RevealItem className="col-span-2 row-span-2">
+              <MediaCard item={featuredItem} featured />
+            </RevealItem>
+          )}
+          {restItems.map((item) => (
+            <RevealItem key={item.id}>
+              <MediaCard item={item} />
+            </RevealItem>
+          ))}
         </Reveal>
 
         <Reveal className="container mt-10 flex flex-col items-center gap-4 rounded-xl border border-gold/20 bg-white/[0.03] p-8 text-center backdrop-blur-md">

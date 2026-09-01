@@ -5,11 +5,15 @@ import thumb1 from '@/assets/media/ig-1.data'
 import thumb3 from '@/assets/media/ig-3.data'
 import thumb4 from '@/assets/media/ig-4.data'
 import thumb5 from '@/assets/media/ig-5.data'
-import thumb6 from '@/assets/media/ig-6.data'
 
 // Thumbnails are cropped stills from Adv. Wain's own public Instagram/TikTok
 // content (screenshots he supplied). No Facebook material has been supplied
 // yet — add a `platform: 'facebook'` section here once it is.
+//
+// ig-6.data.ts (property-condition clip) is excluded: the stored JPEG decodes
+// to solid black pixel data (verified in isolation, outside any component/CSS)
+// even though its header/dimensions are valid — the crop itself is corrupted.
+// Needs a fresh screenshot re-supplied to bring that item back.
 export const mediaItems: MediaItem[] = [
   {
     id: 'tax-40-percent',
@@ -39,13 +43,6 @@ export const mediaItems: MediaItem[] = [
     platform: 'instagram',
     thumbnail: thumb5,
     caption: 'ליווי משפטי בפרויקט בנייה — מהיסודות ועד המסירה',
-    href: siteConfig.instagramUrl,
-  },
-  {
-    id: 'property-condition',
-    platform: 'instagram',
-    thumbnail: thumb6,
-    caption: 'בדיקת מצב הנכס לפני העסקה — למה זה קריטי',
     href: siteConfig.instagramUrl,
   },
 ]
