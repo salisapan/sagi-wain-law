@@ -4,7 +4,12 @@ interface LogoProps {
 
 let idCounter = 0
 
-/** Bespoke scales-of-justice monogram in a sapphire-gradient ring, replacing the generic icon. */
+/**
+ * Bespoke scales-of-justice monogram, kept in a warm gold gradient as a
+ * deliberate small accent against the now blue-dominant palette — the
+ * gold+blue blend (small warm monogram, blue everywhere else) is the
+ * intended look, not an oversight.
+ */
 export function Logo({ className = 'h-8 w-8' }: LogoProps) {
   const gradientId = `logo-gold-${(idCounter += 1)}`
 
@@ -12,11 +17,11 @@ export function Logo({ className = 'h-8 w-8' }: LogoProps) {
     <svg viewBox="0 0 40 40" className={className} fill="none" aria-hidden="true">
       <defs>
         <linearGradient id={gradientId} x1="4" y1="4" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#E8F0FC" />
-          <stop offset="25%" stopColor="#6FA3E0" />
-          <stop offset="50%" stopColor="#1B3A6B" />
-          <stop offset="75%" stopColor="#6FA3E0" />
-          <stop offset="100%" stopColor="#E8F0FC" />
+          <stop offset="0%" stopColor="#F5E7C4" />
+          <stop offset="25%" stopColor="#D4AF37" />
+          <stop offset="50%" stopColor="#9C7A2E" />
+          <stop offset="75%" stopColor="#D4AF37" />
+          <stop offset="100%" stopColor="#F5E7C4" />
         </linearGradient>
       </defs>
 
