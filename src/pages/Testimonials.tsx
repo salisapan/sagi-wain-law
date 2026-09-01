@@ -3,10 +3,14 @@ import { Quote } from 'lucide-react'
 
 import { Seo } from '@/components/shared/Seo'
 import { PageHero } from '@/components/shared/PageHero'
-import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Reveal } from '@/components/shared/Reveal'
+import { TestimonialsColumn } from '@/components/ui/testimonials-columns-1'
 import { testimonials } from '@/data/testimonials'
+
+const firstColumn = testimonials.slice(0, 4)
+const secondColumn = testimonials.slice(4, 8)
+const thirdColumn = testimonials.slice(8, 12)
 
 export default function Testimonials() {
   return (
@@ -18,15 +22,10 @@ export default function Testimonials() {
       <section className="bg-black/30 py-16 backdrop-blur-sm">
         <Reveal className="container">
           {testimonials.length > 0 ? (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {testimonials.map((t) => (
-                <Card key={t.name} className="p-6">
-                  <Quote className="h-6 w-6 text-gold-light" />
-                  <p className="mt-4 text-sm leading-relaxed text-white/80">{t.quote}</p>
-                  <p className="mt-4 text-sm font-semibold text-gold-light">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
-                </Card>
-              ))}
+            <div className="flex max-h-[740px] justify-center gap-5 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+              <TestimonialsColumn testimonials={firstColumn} duration={16} />
+              <TestimonialsColumn testimonials={secondColumn} duration={20} className="hidden sm:block" />
+              <TestimonialsColumn testimonials={thirdColumn} duration={18} className="hidden lg:block" />
             </div>
           ) : (
             <div className="mx-auto max-w-xl rounded-lg border-2 border-dashed border-gold/30 bg-white/[0.03] p-12 text-center backdrop-blur-md">
