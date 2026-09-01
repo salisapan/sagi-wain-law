@@ -322,7 +322,10 @@ export function CinematicScene() {
 
       shaderUniforms.uTime.value = clock.getElapsedTime()
       shaderUniforms.uMouse.value.set(mouseX, -mouseY)
-      shaderUniforms.uScroll.value = isHomeRef.current ? currentScroll : 0
+      // Inner pages hold the shader near the sapphire end of its journey (not
+      // the bronze start) so the blue palette carries across the whole site,
+      // not just while scrolling through the Home page.
+      shaderUniforms.uScroll.value = isHomeRef.current ? currentScroll : 0.8
 
       renderer.render(scene, camera)
     }

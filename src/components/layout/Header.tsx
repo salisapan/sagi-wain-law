@@ -18,13 +18,13 @@ import { cn } from '@/lib/utils'
 
 function NavItem({ to, end, children }: { to: string; end?: boolean; children: React.ReactNode }) {
   return (
-    <NavLink to={to} end={end} className="group relative px-1 py-2 text-sm font-medium text-white/85 transition-colors hover:text-gold-light">
+    <NavLink to={to} end={end} className="group relative px-1 py-2 text-sm font-medium text-white/75 transition-colors hover:text-white">
       {({ isActive }) => (
         <>
-          <span className={isActive ? 'text-gold-light' : undefined}>{children}</span>
+          <span className={isActive ? 'text-white' : undefined}>{children}</span>
           <span
             className={cn(
-              'absolute inset-x-0 -bottom-0.5 h-[2px] origin-center scale-x-0 bg-gold-metallic transition-transform duration-300 group-hover:scale-x-100',
+              'absolute inset-x-0 -bottom-0.5 h-px origin-center scale-x-0 bg-white/70 transition-transform duration-300 group-hover:scale-x-100',
               isActive && 'scale-x-100',
             )}
           />
@@ -46,18 +46,18 @@ export function Header() {
   }, [])
 
   return (
-    <header
-      className={cn(
-        'sticky top-0 z-40 transition-all duration-500',
-        scrolled
-          ? 'border-b border-gold/20 bg-navy/90 shadow-navy backdrop-blur-xl'
-          : 'border-b border-transparent bg-navy/50 backdrop-blur-md',
-      )}
-    >
-      <div className="container flex h-20 items-center justify-between">
+    <header className="sticky top-3 z-40 mx-3 sm:top-4 sm:mx-6 lg:mx-10">
+      <div
+        className={cn(
+          'flex h-16 items-center justify-between rounded-2xl border px-4 transition-all duration-500 sm:px-6',
+          scrolled
+            ? 'border-white/10 bg-black/40 shadow-navy backdrop-blur-xl'
+            : 'border-white/5 bg-black/15 backdrop-blur-md',
+        )}
+      >
         <Link to="/" className="flex items-center gap-2">
           <Logo className="h-8 w-8" />
-          <span className="font-display text-xl font-semibold text-gradient-gold">עו״ד שגיא ויין</span>
+          <span className="font-display text-xl font-semibold text-white">עו״ד שגיא ויין</span>
         </Link>
 
         <nav className="hidden items-center gap-2 md:flex">
@@ -77,7 +77,7 @@ export function Header() {
                         <NavigationMenuLink asChild>
                           <Link
                             to={`/services/${area.slug}`}
-                            className="block rounded-md px-3 py-2 text-sm text-white/85 transition-colors hover:bg-white/5 hover:text-gold-light"
+                            className="block rounded-md px-3 py-2 text-sm text-white/85 transition-colors hover:bg-white/5 hover:text-white"
                           >
                             {area.navTitle}
                           </Link>
@@ -96,7 +96,7 @@ export function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <Button asChild variant="gold">
+          <Button asChild variant="gold" size="sm">
             <Link to="/contact">פגישת היכרות חינם</Link>
           </Button>
         </div>

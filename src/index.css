@@ -34,7 +34,7 @@
     --input: 216 15% 18%;
     --ring: 216 56% 42%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 }
 
@@ -52,17 +52,6 @@
     font-feature-settings: 'kern' 1;
     background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
     background-size: 28px 28px;
-    cursor: none;
-  }
-
-  * {
-    cursor: none !important;
-  }
-
-  input,
-  textarea,
-  select {
-    cursor: text !important;
   }
 
   ::-webkit-scrollbar {
@@ -152,20 +141,8 @@ html.a11y-contrast * {
   cursor: auto !important;
 }
 
-html.a11y-contrast .cinematic-scene,
-html.a11y-contrast .cinematic-cursor {
+html.a11y-contrast .cinematic-scene {
   display: none !important;
-}
-
-@media (pointer: coarse) {
-  .cinematic-cursor {
-    display: none;
-  }
-
-  body,
-  * {
-    cursor: auto !important;
-  }
 }
 
 html.a11y-underline a {
