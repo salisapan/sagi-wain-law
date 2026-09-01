@@ -19,11 +19,18 @@ export interface Testimonial {
   rating: number
 }
 
+export interface ArticleSection {
+  heading: string
+  paragraphs: string[]
+}
+
 export interface Article {
   slug: string
   title: string
   excerpt: string
   body: string[]
+  sections?: ArticleSection[]
+  sources?: string[]
   published: boolean
   practiceAreaSlug?: string
 }
