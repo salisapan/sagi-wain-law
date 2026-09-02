@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
-import { GraduationCap, Handshake, Scale } from 'lucide-react'
+import { GraduationCap, Handshake, Scale, ScrollText } from 'lucide-react'
 
 import { Seo } from '@/components/shared/Seo'
 import { Button } from '@/components/ui/button'
+import { MagneticWrap } from '@/components/shared/MagneticWrap'
+import { SectionMotif } from '@/components/shared/SectionMotif'
 import { Reveal, RevealItem } from '@/components/shared/Reveal'
 import { siteConfig } from '@/data/siteConfig'
 import sagiPortrait from '@/assets/about/sagi-portrait.data'
@@ -76,8 +78,9 @@ export default function About() {
         </Reveal>
       </section>
 
-      <section className="bg-black/10 py-20">
-        <Reveal className="container max-w-3xl space-y-6">
+      <section className="relative overflow-hidden bg-black/10 py-20">
+        <SectionMotif icon={ScrollText} className="-end-10 -top-14 h-72 w-72 rotate-12 sm:h-96 sm:w-96" />
+        <Reveal className="container relative max-w-3xl space-y-6">
           <h2 className="text-3xl font-extrabold tracking-tight text-white">איך אני עובד</h2>
           <p className="leading-relaxed text-white/70">
             כל עסקת נדל״ן מתחילה בהבנה — של הצרכים שלכם, של הסיכונים בעסקה הספציפית, ושל מה
@@ -88,9 +91,11 @@ export default function About() {
             לצד העבודה השוטפת מול לקוחות, אני יוצר תוכן משפטי ברשתות החברתיות כדי לחשוף את
             הציבור הרחב לזכויות ולסיכונים שכדאי להכיר לפני כל עסקת נדל״ן.
           </p>
-          <Button asChild variant="gold" size="lg">
-            <Link to="/contact">קביעת פגישת היכרות חינם</Link>
-          </Button>
+          <MagneticWrap className="inline-block w-fit">
+            <Button asChild variant="gold" size="lg">
+              <Link to="/contact">קביעת פגישת היכרות חינם</Link>
+            </Button>
+          </MagneticWrap>
         </Reveal>
       </section>
     </>

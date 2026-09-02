@@ -1,5 +1,6 @@
 import { Seo } from '@/components/shared/Seo'
 import { CinematicSlides } from '@/components/cinematic/CinematicSlides'
+import { PracticeDossier } from '@/components/home/PracticeDossier'
 import { CinematicTestimonials } from '@/components/home/CinematicTestimonials'
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
         description="עו״ד שגיא ויין — ליווי משפטי בעסקאות נדל״ן: בדיקת חוזים, דיני שכירות, ירושה וצוואות וליווי משקיעים. פגישת היכרות ראשונית ללא עלות."
       />
       <CinematicSlides />
+      <PracticeDossier />
       <CinematicTestimonials />
     </>
   )

@@ -4,6 +4,7 @@ import { Menu } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Logo } from '@/components/shared/Logo'
+import { MagneticWrap } from '@/components/shared/MagneticWrap'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from '@/components/ui/sheet'
 import {
   NavigationMenu,
@@ -96,9 +97,11 @@ export function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <Button asChild variant="gold" size="sm">
-            <Link to="/contact">פגישת היכרות חינם</Link>
-          </Button>
+          <MagneticWrap className="inline-block w-fit" strength={0.25}>
+            <Button asChild variant="gold" size="sm">
+              <Link to="/contact">פגישת היכרות חינם</Link>
+            </Button>
+          </MagneticWrap>
         </div>
 
         <Sheet open={open} onOpenChange={setOpen}>

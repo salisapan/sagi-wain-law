@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
-import { BookOpen } from 'lucide-react'
+import { BookOpen, ScrollText } from 'lucide-react'
 
 import { Seo } from '@/components/shared/Seo'
 import { PageHero } from '@/components/shared/PageHero'
 import { Button } from '@/components/ui/button'
 import { ArticleCard } from '@/components/blog/ArticleCard'
 import { Reveal, RevealItem } from '@/components/shared/Reveal'
+import { SectionMotif } from '@/components/shared/SectionMotif'
 import { publishedArticles } from '@/data/articles'
 
 export default function BlogIndex() {
@@ -17,8 +18,9 @@ export default function BlogIndex() {
 
       <PageHero eyebrow="מאמרים" description="תוכן משפטי בשפה פשוטה, בנושאי נדל״ן שרלוונטיים לכל אחד." title="מאמרים" />
 
-      <section className="bg-black/30 py-16 backdrop-blur-sm">
-        <div className="container">
+      <section className="relative overflow-hidden bg-black/30 py-16 backdrop-blur-sm">
+        <SectionMotif icon={ScrollText} className="-start-14 -top-10 h-72 w-72 rotate-6 sm:h-96 sm:w-96" />
+        <div className="container relative">
           {articles.length > 0 ? (
             <Reveal stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {articles.map((article) => (

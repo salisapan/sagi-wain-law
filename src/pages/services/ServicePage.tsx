@@ -4,6 +4,8 @@ import { ArrowLeft, CheckCircle2 } from 'lucide-react'
 import { Seo } from '@/components/shared/Seo'
 import { PageHero } from '@/components/shared/PageHero'
 import { Reveal, RevealItem } from '@/components/shared/Reveal'
+import { MagneticWrap } from '@/components/shared/MagneticWrap'
+import { SectionMotif } from '@/components/shared/SectionMotif'
 import { Button } from '@/components/ui/button'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { getPracticeAreaBySlug, practiceAreas } from '@/data/practiceAreas'
@@ -23,16 +25,19 @@ export default function ServicePage() {
       <Seo title={area.title} description={area.summary} />
 
       <PageHero eyebrow="תחומי התמחות" title={area.title} description={area.tagline}>
-        <Button asChild size="lg" variant="gold" className="mt-4">
-          <Link to="/contact">
-            קביעת פגישת היכרות חינם
-            <ArrowLeft className="h-4 w-4" />
-          </Link>
-        </Button>
+        <MagneticWrap className="mt-4 inline-block w-fit">
+          <Button asChild size="lg" variant="gold">
+            <Link to="/contact">
+              קביעת פגישת היכרות חינם
+              <ArrowLeft className="h-4 w-4" />
+            </Link>
+          </Button>
+        </MagneticWrap>
       </PageHero>
 
-      <section className="bg-black/30 py-16 backdrop-blur-sm">
-        <div className="container grid gap-12 lg:grid-cols-3">
+      <section className="relative overflow-hidden bg-black/30 py-16 backdrop-blur-sm">
+        <SectionMotif icon={area.icon} className="-end-12 top-0 h-80 w-80 -rotate-6 sm:h-[28rem] sm:w-[28rem]" />
+        <div className="container relative grid gap-12 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-10">
             <Reveal>
               <h2 className="text-2xl font-semibold text-gold-light">מה כלול בליווי</h2>

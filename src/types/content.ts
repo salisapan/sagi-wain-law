@@ -31,6 +31,7 @@ export interface Article {
   body: string[]
   sections?: ArticleSection[]
   sources?: string[]
+  keyTakeaways?: string[]
   published: boolean
   practiceAreaSlug?: string
 }

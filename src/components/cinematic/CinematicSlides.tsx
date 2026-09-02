@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { motion, useMotionValueEvent, useScroll, type Easing } from 'framer-motion'
 
 import { Button } from '@/components/ui/button'
+import { MagneticWrap } from '@/components/shared/MagneticWrap'
+import { cn } from '@/lib/utils'
 import { cinematicSlides } from '@/lib/cinematicContent'
 
 const easeOut: Easing = [0.22, 1, 0.36, 1]
@@ -82,6 +84,36 @@ export function CinematicSlides() {
   return (
     <div ref={containerRef} data-cinematic-track className="relative h-[500vh] sm:h-[700vh] lg:h-[900vh]">
       <div className="sticky top-0 flex h-dvh w-full flex-col justify-end overflow-hidden px-6 pb-10 sm:px-10 lg:px-16">
+        <div className="pointer-events-none absolute inset-y-0 start-8 z-20 hidden flex-col items-start justify-center gap-7 lg:start-14 lg:flex">
+          <motion.div
+            aria-hidden
+            className="absolute start-[3px] top-[15%] w-px origin-top bg-gold-metallic bg-[length:100%_400%]"
+            style={{ scaleY: scrollYProgress, height: '70%' }}
+          />
+          <div aria-hidden className="absolute start-[3px] top-[15%] h-[70%] w-px bg-white/10" />
+          {cinematicSlides.map((slide, index) => {
+            const active = activeIndex === index
+            return (
+              <div key={slide.id} className="relative flex items-center gap-4">
+                <span
+                  className={cn(
+                    'z-10 block h-2 w-2 rounded-full border transition-all duration-500',
+                    active ? 'scale-[1.4] border-gold-200 bg-gold-200 shadow-gold' : 'border-white/30 bg-black/60',
+                  )}
+                />
+                <span
+                  className={cn(
+                    'whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.25em] transition-all duration-500',
+                    active ? 'translate-x-0 text-gold-200 opacity-100' : '-translate-x-1 text-white/35 opacity-0',
+                  )}
+                >
+                  {slide.label}
+                </span>
+              </div>
+            )
+          })}
+        </div>
+
         {cinematicSlides.map((slide, index) => {
           const active = activeIndex === index
           return (
@@ -115,9 +147,11 @@ export function CinematicSlides() {
                     transition={{ duration: 0.8, ease: easeOut, delay: 0.6 }}
                     className="mt-8"
                   >
-                    <Button asChild size="lg" variant="gold">
-                      <Link to={slide.cta.href}>{slide.cta.label}</Link>
-                    </Button>
+                    <MagneticWrap className="inline-block w-fit" strength={0.3}>
+                      <Button asChild size="lg" variant="gold">
+                        <Link to={slide.cta.href}>{slide.cta.label}</Link>
+                      </Button>
+                    </MagneticWrap>
                   </motion.div>
                 )}
               </div>
