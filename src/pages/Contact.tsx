@@ -4,6 +4,7 @@ import { Seo } from '@/components/shared/Seo'
 import { PageHero } from '@/components/shared/PageHero'
 import { ContactForm } from '@/components/contact/ContactForm'
 import { Reveal, RevealItem } from '@/components/shared/Reveal'
+import { SignatureDraw } from '@/components/shared/SignatureDraw'
 import { siteConfig } from '@/data/siteConfig'
 import sagiPortrait from '@/assets/about/sagi-portrait.data'
 
@@ -19,7 +20,9 @@ export default function Contact() {
         eyebrow="יצירת קשר"
         title="בואו נדבר על העסקה שלכם"
         description="פגישת היכרות ראשונית ללא עלות — נבין יחד מה נכון לעשות."
-      />
+      >
+        <SignatureDraw className="mt-2 h-14 w-40" />
+      </PageHero>
 
       <section className="bg-black/30 py-16 backdrop-blur-sm">
         <div className="container grid gap-12 lg:grid-cols-5">

@@ -5,6 +5,7 @@ import { Seo } from '@/components/shared/Seo'
 import { Button } from '@/components/ui/button'
 import { MagneticWrap } from '@/components/shared/MagneticWrap'
 import { DraftBanner } from '@/components/blog/DraftBanner'
+import { ArticleTOC } from '@/components/blog/ArticleTOC'
 import { getArticleBySlug } from '@/data/articles'
 
 export default function BlogPost() {
@@ -20,6 +21,7 @@ export default function BlogPost() {
       <Seo title={article.title} description={article.excerpt} />
 
       <article className="bg-black/30 py-16 backdrop-blur-sm">
+        {article.sections && article.sections.length > 1 && <ArticleTOC sections={article.sections} />}
         <div className="container max-w-2xl">
           <Link to="/articles" className="inline-flex items-center gap-1.5 text-sm text-gold-light hover:underline">
             <ArrowLeft className="h-3.5 w-3.5 rotate-180" />
@@ -73,7 +75,7 @@ export default function BlogPost() {
           {article.sections && article.sections.length > 0 && (
             <div className="mt-10 space-y-10">
               {article.sections.map((section, i) => (
-                <section key={i}>
+                <section key={i} id={`section-${i}`} className="scroll-mt-28">
                   <h2 className="flex items-baseline gap-3 font-display text-xl font-bold tracking-[-0.01em] text-white sm:text-2xl">
                     <span className="text-base font-normal text-gold-light/70">{String(i + 1).padStart(2, '0')}</span>
                     {section.heading}

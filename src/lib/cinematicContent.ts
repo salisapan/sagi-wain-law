@@ -10,6 +10,8 @@ export interface CinematicSlideContent {
   cta?: { label: string; href: string }
   /** Renders the portrait beside columnA instead of the two-column text grid. */
   portrait?: boolean
+  /** Draws the signature flourish beneath the CTA. */
+  signature?: boolean
 }
 
 export const cinematicSlides: CinematicSlideContent[] = [
@@ -53,5 +55,6 @@ export const cinematicSlides: CinematicSlideContent[] = [
     columnA: 'לפני שאתם חותמים על כל מסמך — בואו נדבר. פגישת היכרות ראשונית ללא עלות.',
     columnB: `${siteConfig.phoneDisplay} · וואטסאפ זמין · ${siteConfig.addressDisplay}`,
     cta: { label: 'קביעת פגישת היכרות חינם', href: '/contact' },
+    signature: true,
   },
 ]

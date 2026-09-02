@@ -15,10 +15,11 @@ export function AnimatedOutlet() {
     <AnimatePresence mode="wait">
       <motion.div
         key={location.pathname}
-        initial={{ opacity: 0, y: 14, filter: 'blur(6px)' }}
-        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        exit={{ opacity: 0, y: -10, filter: 'blur(6px)' }}
-        transition={{ duration: 0.4, ease: easeOut }}
+        style={{ transformOrigin: 'top center' }}
+        initial={{ opacity: 0, y: 14, scaleY: 0.97, filter: 'blur(6px)' }}
+        animate={{ opacity: 1, y: 0, scaleY: 1, filter: 'blur(0px)' }}
+        exit={{ opacity: 0, y: -10, scaleY: 0.985, filter: 'blur(6px)' }}
+        transition={{ duration: 0.45, ease: easeOut }}
       >
         <Outlet />
       </motion.div>

@@ -5,6 +5,7 @@ import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { MagneticWrap } from '@/components/shared/MagneticWrap'
 import { BuildingParallax } from '@/components/cinematic/BuildingParallax'
+import { SignatureDraw } from '@/components/shared/SignatureDraw'
 import { cn } from '@/lib/utils'
 import { easeOut } from '@/lib/motion'
 import { cinematicSlides } from '@/lib/cinematicContent'
@@ -188,6 +189,8 @@ export function CinematicSlides() {
                     </MagneticWrap>
                   </motion.div>
                 )}
+
+                {slide.signature && <SignatureDraw active={active} className="mt-4 h-12 w-36 opacity-80" />}
               </div>
             </div>
           )
