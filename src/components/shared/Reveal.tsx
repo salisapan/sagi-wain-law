@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import { motion, type Variants } from 'framer-motion'
 
 import { easeOut } from '@/lib/motion'
+import { cn } from '@/lib/utils'
 
 interface RevealProps {
   children: ReactNode
@@ -10,6 +11,8 @@ interface RevealProps {
   delay?: number
   y?: number
   as?: 'div' | 'section'
+  /** 'mask' draws the content in behind a rising clip-path curtain instead of fading/rising. */
+  variant?: 'default' | 'mask'
 }
 
 const item: Variants = {
@@ -30,7 +33,15 @@ const itemPremium: Variants = {
  * children in sequence (each child should be a motion-aware element or
  * plain element — framer-motion applies the variant via context).
  */
-export function Reveal({ children, className, stagger = false, delay = 0, y = 28, as = 'div' }: RevealProps) {
+export function Reveal({
+  children,
+  className,
+  stagger = false,
+  delay = 0,
+  y = 28,
+  as = 'div',
+  variant = 'default',
+}: RevealProps) {
   const Component = as === 'section' ? motion.section : motion.div
 
   if (stagger) {
@@ -41,6 +52,20 @@ export function Reveal({ children, className, stagger = false, delay = 0, y = 28
         whileInView="show"
         viewport={{ once: true, margin: '-80px' }}
         transition={{ staggerChildren: 0.12, delayChildren: delay }}
+      >
+        {children}
+      </Component>
+    )
+  }
+
+  if (variant === 'mask') {
+    return (
+      <Component
+        className={cn('overflow-hidden', className)}
+        initial={{ clipPath: 'inset(0 0 100% 0)' }}
+        whileInView={{ clipPath: 'inset(0 0 0% 0)' }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.9, ease: easeOut, delay }}
       >
         {children}
       </Component>

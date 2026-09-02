@@ -130,7 +130,7 @@ export function CinematicSlides() {
               <div
                 className={cn(
                   'me-auto ms-0 rounded-3xl border border-white/5 bg-black/35 p-6 backdrop-blur-md sm:p-8',
-                  slide.portrait ? 'max-w-2xl sm:pe-8' : 'max-w-3xl sm:pe-16',
+                  slide.portrait ? 'max-w-3xl sm:pe-8' : 'max-w-3xl sm:pe-16',
                 )}
               >
                 <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.3em] text-gold-200">
@@ -138,8 +138,8 @@ export function CinematicSlides() {
                 </span>
 
                 {slide.portrait ? (
-                  <div className="grid gap-6 sm:grid-cols-[9rem_1fr] sm:items-center">
-                    <div className="gradient-border mx-auto aspect-[4/5] w-32 shrink-0 overflow-hidden rounded-2xl border border-gold/30 shadow-gold-lg sm:w-full">
+                  <div className="grid gap-6 sm:grid-cols-[13rem_1fr] sm:items-center">
+                    <div className="gradient-border mx-auto aspect-[4/5] w-44 shrink-0 overflow-hidden rounded-2xl border border-gold/30 shadow-gold-lg sm:w-full">
                       <img
                         src={sagiPortrait}
                         alt="עו״ד שגיא ויין"

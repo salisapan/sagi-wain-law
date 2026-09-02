@@ -13,8 +13,12 @@ export function AboutSection() {
     <div id="about">
       <section className="bg-black/30 py-20 backdrop-blur-sm">
         <Reveal className="container mb-12 flex flex-col items-center gap-5 text-center sm:flex-row sm:text-start">
-          <div className="gradient-border h-20 w-20 shrink-0 overflow-hidden rounded-full border border-gold/30 shadow-gold sm:h-24 sm:w-24">
-            <img src={sagiPortrait} alt="עו״ד שגיא ויין" className="h-full w-full object-cover object-top" />
+          <div className="gradient-border h-28 w-28 shrink-0 overflow-hidden rounded-full border border-gold/30 shadow-gold-lg sm:h-40 sm:w-40">
+            <img
+              src={sagiPortrait}
+              alt="עו״ד שגיא ויין"
+              className="h-full w-full scale-[1.7] object-cover object-[50%_18%]"
+            />
           </div>
           <div>
             <h2 className="font-display text-2xl font-bold tracking-[-0.02em] text-white sm:text-3xl">

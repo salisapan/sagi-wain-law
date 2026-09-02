@@ -78,12 +78,16 @@ export function PracticeDossier() {
   return (
     <section className="relative z-10 bg-black/40 py-24 backdrop-blur-sm">
       <div className="container">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.3em] text-gold-200">
-            תחומי התמחות
-          </span>
-          <h2 className="font-display text-3xl font-medium text-[#fff6ed] sm:text-5xl">התיקים שאני מלווה</h2>
-        </Reveal>
+        <div className="mx-auto max-w-2xl text-center">
+          <Reveal>
+            <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.3em] text-gold-200">
+              תחומי התמחות
+            </span>
+          </Reveal>
+          <Reveal variant="mask" delay={0.1}>
+            <h2 className="font-display text-3xl font-medium text-[#fff6ed] sm:text-5xl">התיקים שאני מלווה</h2>
+          </Reveal>
+        </div>
 
         <Reveal stagger className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {practiceAreas.map((area) => (

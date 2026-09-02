@@ -14,18 +14,26 @@ export function PageHero({ eyebrow, title, description, children }: PageHeroProp
   return (
     <section className="relative overflow-hidden bg-black/40 py-20 text-white backdrop-blur-sm sm:py-28">
       <BuildingParallaxBand />
-      <Reveal as="section" className="container relative">
+      <div className="container relative">
         <div className="max-w-3xl space-y-4">
           {eyebrow && (
-            <span className="inline-block text-sm font-semibold uppercase tracking-wide text-gold-light">
-              {eyebrow}
-            </span>
+            <Reveal>
+              <span className="inline-block text-sm font-semibold uppercase tracking-wide text-gold-light">
+                {eyebrow}
+              </span>
+            </Reveal>
           )}
-          <h1 className="text-4xl font-extrabold tracking-[-0.02em] text-white sm:text-5xl">{title}</h1>
-          {description && <p className="text-lg leading-relaxed text-white/80">{description}</p>}
-          {children}
+          <Reveal variant="mask" delay={0.1}>
+            <h1 className="text-4xl font-extrabold tracking-[-0.02em] text-white sm:text-5xl">{title}</h1>
+          </Reveal>
+          {description && (
+            <Reveal delay={0.25}>
+              <p className="text-lg leading-relaxed text-white/80">{description}</p>
+            </Reveal>
+          )}
+          {children && <Reveal delay={0.35}>{children}</Reveal>}
         </div>
-      </Reveal>
+      </div>
     </section>
   )
 }
