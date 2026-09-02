@@ -136,6 +136,10 @@ export default {
           from: { transform: 'translateX(-50%)' },
           to: { transform: 'translateX(0%)' },
         },
+        breathe: {
+          '0%, 100%': { opacity: '0.07', transform: 'scale(1)' },
+          '50%': { opacity: '0.1', transform: 'scale(1.03)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -147,6 +151,7 @@ export default {
         'blob-drift-slower': 'blob-drift 24s ease-in-out infinite',
         'gradient-x': 'gradient-x 6s ease infinite',
         'glow-pulse': 'glow-pulse 2.8s ease-in-out infinite',
+        breathe: 'breathe 9s ease-in-out infinite',
         'marquee-right': 'marquee-right 32s linear infinite',
       },
     },

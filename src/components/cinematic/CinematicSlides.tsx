@@ -1,14 +1,13 @@
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useMotionValueEvent, useScroll, type Easing } from 'framer-motion'
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 
 import { Button } from '@/components/ui/button'
 import { MagneticWrap } from '@/components/shared/MagneticWrap'
 import { BuildingParallax } from '@/components/cinematic/BuildingParallax'
 import { cn } from '@/lib/utils'
+import { easeOut } from '@/lib/motion'
 import { cinematicSlides } from '@/lib/cinematicContent'
-
-const easeOut: Easing = [0.22, 1, 0.36, 1]
 
 // Contiguous, no gaps — every point in the 900vh scroll track has an active
 // slide, so the background never scrolls past with the text area blank.

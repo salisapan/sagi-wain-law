@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react'
-import { motion, type Easing, type Variants } from 'framer-motion'
+import { motion, type Variants } from 'framer-motion'
+
+import { easeOut } from '@/lib/motion'
 
 interface RevealProps {
   children: ReactNode
@@ -9,8 +11,6 @@ interface RevealProps {
   y?: number
   as?: 'div' | 'section'
 }
-
-const easeOut: Easing = [0.22, 1, 0.36, 1]
 
 const item: Variants = {
   hidden: { opacity: 0, y: 28 },
