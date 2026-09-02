@@ -4,6 +4,7 @@ import { motion, useMotionValueEvent, useScroll, type Easing } from 'framer-moti
 
 import { Button } from '@/components/ui/button'
 import { MagneticWrap } from '@/components/shared/MagneticWrap'
+import { BuildingParallax } from '@/components/cinematic/BuildingParallax'
 import { cn } from '@/lib/utils'
 import { cinematicSlides } from '@/lib/cinematicContent'
 
@@ -84,6 +85,8 @@ export function CinematicSlides() {
   return (
     <div ref={containerRef} data-cinematic-track className="relative h-[500vh] sm:h-[700vh] lg:h-[900vh]">
       <div className="sticky top-0 flex h-dvh w-full flex-col justify-end overflow-hidden px-6 pb-10 sm:px-10 lg:px-16">
+        <BuildingParallax scrollYProgress={scrollYProgress} />
+
         <div className="pointer-events-none absolute inset-y-0 start-8 z-20 hidden flex-col items-start justify-center gap-7 lg:start-14 lg:flex">
           <motion.div
             aria-hidden

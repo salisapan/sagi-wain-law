@@ -1,15 +1,11 @@
 import { useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
 import * as THREE from 'three'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 import { createSparkTexture } from './sparkTexture'
 import { liquidMetalVertexShader } from './shaders/liquidMetal.vert'
 import { liquidMetalFragmentShader } from './shaders/liquidMetal.frag'
 import { getHomeScrollProgress } from '@/lib/cinematicScroll'
-
-const ASSET_BASE_URL = 'https://api.getlayers.ai/storage/v1/object/public/public/assets/laocoon-59f84455c6'
-const GLB_URL = `${ASSET_BASE_URL}/bronze_horse.glb`
 
 const SPARK_COUNT_FULL = 280
 const SPARK_COUNT_LOW = 110
@@ -83,33 +79,8 @@ export function CinematicScene() {
     }
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, isLowPower ? 1.5 : 1.75))
-    renderer.shadowMap.enabled = !isLowPower
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap
     renderer.toneMapping = THREE.ACESFilmicToneMapping
     renderer.toneMappingExposure = 2.2
-
-    const ambientLight = new THREE.AmbientLight('#ffffff', 0.1)
-    scene.add(ambientLight)
-
-    const keyLight = new THREE.SpotLight('#ffffff', 18.0)
-    keyLight.position.set(4, 6, 3)
-    keyLight.angle = Math.PI / 4
-    keyLight.penumbra = 0.9
-    keyLight.castShadow = !isLowPower
-    keyLight.shadow.mapSize.width = isLowPower ? 1024 : 1536
-    keyLight.shadow.mapSize.height = isLowPower ? 1024 : 1536
-    keyLight.shadow.camera.near = 1.0
-    keyLight.shadow.camera.far = 15
-    keyLight.shadow.bias = -0.001
-    scene.add(keyLight)
-
-    const rimLight = new THREE.DirectionalLight('#e3f2ff', 10.0)
-    rimLight.position.set(-5, 3, -4)
-    scene.add(rimLight)
-
-    const fillLight = new THREE.DirectionalLight('#fff3e6', 0.8)
-    fillLight.position.set(-2, -4, 2)
-    scene.add(fillLight)
 
     // Spark particles
     const sparkGeometry = new THREE.BufferGeometry()
@@ -161,62 +132,6 @@ export function CinematicScene() {
     const sparkParticles = new THREE.Points(sparkGeometry, sparkMaterial)
     scene.add(sparkParticles)
 
-    // Model
-    let modelPivot: THREE.Group | null = null
-    let mixer: THREE.AnimationMixer | null = null
-    const loader = new GLTFLoader()
-    loader.load(
-      GLB_URL,
-      (gltf) => {
-        const gltfModel = gltf.scene
-        modelPivot = new THREE.Group()
-        scene.add(modelPivot)
-        modelPivot.add(gltfModel)
-
-        gltfModel.traverse((child) => {
-          if ((child as THREE.Mesh).isMesh) {
-            const mesh = child as THREE.Mesh
-            mesh.castShadow = true
-            mesh.receiveShadow = true
-            const material = mesh.material as THREE.MeshStandardMaterial
-            if (material) {
-              material.roughness = 0.42
-              material.metalness = 0.92
-              material.flatShading = false
-              if (material.map) {
-                material.map.anisotropy = 16
-              }
-            }
-          }
-        })
-
-        if (gltf.animations && gltf.animations.length > 0) {
-          mixer = new THREE.AnimationMixer(gltfModel)
-          gltf.animations.forEach((clip) => {
-            mixer!.clipAction(clip).play()
-          })
-        }
-
-        const boxInitial = new THREE.Box3().setFromObject(gltfModel)
-        const sizeInitial = boxInitial.getSize(new THREE.Vector3())
-        const maxDim = Math.max(sizeInitial.x, sizeInitial.y, sizeInitial.z)
-        const targetScale = 3.5 / (maxDim > 0.0001 ? maxDim : 1)
-        gltfModel.scale.setScalar(targetScale)
-
-        gltfModel.updateMatrixWorld(true)
-
-        const boxScaled = new THREE.Box3().setFromObject(gltfModel)
-        const centerScaled = boxScaled.getCenter(new THREE.Vector3())
-        gltfModel.position.sub(centerScaled)
-
-        modelPivot.position.y = -0.4
-      },
-      undefined,
-      (error) => {
-        console.error('Error loading bronze horse model:', error)
-      },
-    )
-
     // Mutable animation state (not React state)
     let currentScroll = 0
     let mouseX = 0
@@ -247,18 +162,12 @@ export function CinematicScene() {
     function animate() {
       rafId = requestAnimationFrame(animate)
       const deltaTime = clock.getDelta()
-      if (mixer) mixer.update(deltaTime)
 
       const targetScroll = isHomeRef.current ? getHomeScrollProgress() : 0
       currentScroll += (targetScroll - currentScroll) * 0.12
 
       mouseX += (targetMouseX - mouseX) * 0.05
       mouseY += (targetMouseY - mouseY) * 0.05
-
-      if (modelPivot) {
-        modelPivot.rotation.y = mouseX * 0.25
-        modelPivot.rotation.x = mouseY * 0.15
-      }
 
       if (!prefersReducedMotion) {
         idleAngle += deltaTime * 0.06
