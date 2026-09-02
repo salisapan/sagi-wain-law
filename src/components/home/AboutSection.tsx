@@ -6,7 +6,7 @@ import { MagneticWrap } from '@/components/shared/MagneticWrap'
 import { SectionMotif } from '@/components/shared/SectionMotif'
 import { Reveal, RevealItem } from '@/components/shared/Reveal'
 import { siteConfig } from '@/data/siteConfig'
-import sagiPortrait from '@/assets/about/sagi-portrait.data'
+import sagiAvatar from '@/assets/about/sagi-avatar.data'
 
 export function AboutSection() {
   return (
@@ -14,11 +14,7 @@ export function AboutSection() {
       <section className="bg-black/30 py-20 backdrop-blur-sm">
         <Reveal className="container mb-12 flex flex-col items-center gap-5 text-center sm:flex-row sm:text-start">
           <div className="gradient-border h-28 w-28 shrink-0 overflow-hidden rounded-full border border-gold/30 shadow-gold-lg sm:h-40 sm:w-40">
-            <img
-              src={sagiPortrait}
-              alt="עו״ד שגיא ויין"
-              className="h-full w-full scale-[1.7] object-cover object-[50%_18%]"
-            />
+            <img src={sagiAvatar} alt="עו״ד שגיא ויין" className="h-full w-full object-cover" />
           </div>
           <div>
             <h2 className="font-display text-2xl font-bold tracking-[-0.02em] text-white sm:text-3xl">
