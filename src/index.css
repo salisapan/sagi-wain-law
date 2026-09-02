@@ -127,6 +127,27 @@
   .gradient-border:hover::before {
     opacity: 1;
   }
+
+  .spotlight {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .spotlight::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(280px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(156, 195, 236, 0.14), transparent 65%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .spotlight:hover::after {
+    opacity: 1;
+  }
 }
 
 html.a11y-contrast {

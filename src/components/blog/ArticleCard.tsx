@@ -2,12 +2,18 @@ import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { useSpotlight } from '@/hooks/useSpotlight'
 import type { Article } from '@/types/content'
 
 export function ArticleCard({ article }: { article: Article }) {
+  const { ref, onMouseMove } = useSpotlight<HTMLDivElement>()
+
   return (
     <Link to={`/articles/${article.slug}`} className="group block h-full">
-      <Card className="gradient-border h-full border-border/60 transition-all duration-500 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 hover:shadow-elevation-3">
+      <Card
+        ref={ref}
+        onMouseMove={onMouseMove}
+        className="spotlight gradient-border h-full border-border/60 transition-all duration-500 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 hover:shadow-elevation-3">
         <CardHeader>
           <CardTitle>{article.title}</CardTitle>
         </CardHeader>

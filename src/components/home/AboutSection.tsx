@@ -6,11 +6,24 @@ import { MagneticWrap } from '@/components/shared/MagneticWrap'
 import { SectionMotif } from '@/components/shared/SectionMotif'
 import { Reveal, RevealItem } from '@/components/shared/Reveal'
 import { siteConfig } from '@/data/siteConfig'
+import sagiPortrait from '@/assets/about/sagi-portrait.data'
 
 export function AboutSection() {
   return (
     <div id="about">
       <section className="bg-black/30 py-20 backdrop-blur-sm">
+        <Reveal className="container mb-12 flex flex-col items-center gap-5 text-center sm:flex-row sm:text-start">
+          <div className="gradient-border h-20 w-20 shrink-0 overflow-hidden rounded-full border border-gold/30 shadow-gold sm:h-24 sm:w-24">
+            <img src={sagiPortrait} alt="עו״ד שגיא ויין" className="h-full w-full object-cover object-top" />
+          </div>
+          <div>
+            <h2 className="font-display text-2xl font-bold tracking-[-0.02em] text-white sm:text-3xl">
+              הרקע המקצועי שלי
+            </h2>
+            <p className="mt-1 text-sm text-white/60">עו״ד שגיא ויין — עורך דין נדל״ן</p>
+          </div>
+        </Reveal>
+
         <Reveal stagger className="container grid gap-8 sm:grid-cols-3">
           {[
             {

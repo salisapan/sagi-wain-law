@@ -3,6 +3,7 @@ import { Footer } from '@/components/layout/Footer'
 import { WhatsAppButton } from '@/components/layout/WhatsAppButton'
 import { AccessibilityWidget } from '@/components/layout/AccessibilityWidget'
 import { AnimatedOutlet } from '@/components/layout/AnimatedOutlet'
+import { ScrollProgressBar } from '@/components/layout/ScrollProgressBar'
 import { CinematicScene } from '@/components/cinematic/CinematicScene'
 import { CinematicGrid } from '@/components/cinematic/CinematicGrid'
 import { Toaster } from '@/components/ui/sonner'
@@ -16,6 +17,7 @@ export function Layout() {
       >
         דלג לתוכן הראשי
       </a>
+      <ScrollProgressBar />
       <CinematicScene />
       <CinematicGrid />
       <Header />
