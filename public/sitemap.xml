@@ -2,7 +2,6 @@
 <!-- TODO: להחליף את כתובת ה-base (https://REPLACE_WITH_DOMAIN) בדומיין הסופי של האתר לפני עלייה לאוויר -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://REPLACE_WITH_DOMAIN/</loc></url>
-  <url><loc>https://REPLACE_WITH_DOMAIN/about</loc></url>
   <url><loc>https://REPLACE_WITH_DOMAIN/services/contracts</loc></url>
   <url><loc>https://REPLACE_WITH_DOMAIN/services/rental</loc></url>
   <url><loc>https://REPLACE_WITH_DOMAIN/services/inheritance</loc></url>
@@ -15,5 +14,11 @@
   <url><loc>https://REPLACE_WITH_DOMAIN/articles/tenant-landlord-basics</loc></url>
   <url><loc>https://REPLACE_WITH_DOMAIN/articles/inheritance-without-will</loc></url>
   <url><loc>https://REPLACE_WITH_DOMAIN/articles/investor-due-diligence</loc></url>
+  <url><loc>https://REPLACE_WITH_DOMAIN/articles/caveat-warning-note</loc></url>
+  <url><loc>https://REPLACE_WITH_DOMAIN/articles/buying-from-developer</loc></url>
+  <url><loc>https://REPLACE_WITH_DOMAIN/articles/tenant-eviction-process</loc></url>
+  <url><loc>https://REPLACE_WITH_DOMAIN/articles/mutual-wills-spouses</loc></url>
+  <url><loc>https://REPLACE_WITH_DOMAIN/articles/real-estate-taxation-guide</loc></url>
+  <url><loc>https://REPLACE_WITH_DOMAIN/articles/construction-defects-rights</loc></url>
   <url><loc>https://REPLACE_WITH_DOMAIN/contact</loc></url>
 </urlset>

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { GraduationCap, Handshake, Scale, ScrollText } from 'lucide-react'
 
-import { Seo } from '@/components/shared/Seo'
 import { Button } from '@/components/ui/button'
 import { MagneticWrap } from '@/components/shared/MagneticWrap'
 import { SectionMotif } from '@/components/shared/SectionMotif'
@@ -9,21 +8,16 @@ import { Reveal, RevealItem } from '@/components/shared/Reveal'
 import { siteConfig } from '@/data/siteConfig'
 import sagiPortrait from '@/assets/about/sagi-portrait.data'
 
-export default function About() {
+export function AboutSection() {
   return (
-    <>
-      <Seo
-        title="אודות"
-        description="עו״ד שגיא ויין — רקע מקצועי, השכלה ותחומי עיסוק בליווי משפטי בעסקאות נדל״ן."
-      />
-
+    <div id="about">
       <section className="relative overflow-hidden bg-black/40 py-20 text-white backdrop-blur-sm sm:py-28">
         <div className="container relative grid gap-12 lg:grid-cols-2 lg:items-center">
           <Reveal className="space-y-4">
             <span className="inline-block text-sm font-semibold uppercase tracking-wide text-gold-light">
               אודות
             </span>
-            <h1 className="text-4xl font-extrabold tracking-[-0.02em] text-white sm:text-5xl">עו״ד שגיא ויין</h1>
+            <h2 className="text-4xl font-extrabold tracking-[-0.02em] text-white sm:text-5xl">עו״ד שגיא ויין</h2>
             <p className="text-lg leading-relaxed text-white/80">
               עורך דין נדל״ן, מלווה יחידים, משפחות ומשקיעים בעסקאות נדל״ן — מבדיקת חוזה
               ראשונית ועד סגירת העסקה. בונה נוכחות דיגיטלית וחינוך משפטי לציבור הרחב תחת
@@ -98,6 +92,6 @@ export default function About() {
           </MagneticWrap>
         </Reveal>
       </section>
-    </>
+    </div>
   )
 }

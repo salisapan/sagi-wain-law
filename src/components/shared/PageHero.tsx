@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 
 import { Reveal } from '@/components/shared/Reveal'
+import { BuildingParallaxBand } from '@/components/cinematic/BuildingParallaxBand'
 
 interface PageHeroProps {
   eyebrow?: string
@@ -12,6 +13,7 @@ interface PageHeroProps {
 export function PageHero({ eyebrow, title, description, children }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden bg-black/40 py-20 text-white backdrop-blur-sm sm:py-28">
+      <BuildingParallaxBand />
       <Reveal as="section" className="container relative">
         <div className="max-w-3xl space-y-4">
           {eyebrow && (

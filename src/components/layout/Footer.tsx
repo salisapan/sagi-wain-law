@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { practiceAreas } from '@/data/practiceAreas'
 import { siteConfig } from '@/data/siteConfig'
 import { InstagramIcon, TikTokIcon } from '@/components/shared/SocialIcons'
-import { Logo } from '@/components/shared/Logo'
 
 export function Footer() {
   return (
@@ -12,7 +11,6 @@ export function Footer() {
       <div className="container relative grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-3">
           <Link to="/" className="flex items-center gap-2">
-            <Logo className="h-7 w-7" />
             <span className="font-display text-lg font-semibold text-gradient-gold">עו״ד שגיא ויין</span>
           </Link>
           <p className="text-sm leading-relaxed text-white/70">
@@ -37,7 +35,7 @@ export function Footer() {
           <h3 className="font-display text-base font-semibold text-gold-light">ניווט</h3>
           <ul className="space-y-2 text-sm text-white/70">
             <li>
-              <Link to="/about" className="transition-colors hover:text-gold-light">
+              <Link to="/#about" className="transition-colors hover:text-gold-light">
                 אודות
               </Link>
             </li>

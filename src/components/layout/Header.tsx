@@ -3,7 +3,6 @@ import { Link, NavLink } from 'react-router-dom'
 import { Menu } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
-import { Logo } from '@/components/shared/Logo'
 import { MagneticWrap } from '@/components/shared/MagneticWrap'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from '@/components/ui/sheet'
 import {
@@ -57,7 +56,6 @@ export function Header() {
         )}
       >
         <Link to="/" className="flex items-center gap-2">
-          <Logo className="h-8 w-8" />
           <span className="font-display text-xl font-semibold text-white">עו״ד שגיא ויין</span>
         </Link>
 
@@ -65,7 +63,7 @@ export function Header() {
           <NavItem to="/" end>
             בית
           </NavItem>
-          <NavItem to="/about">אודות</NavItem>
+          <NavItem to="/#about">אודות</NavItem>
 
           <NavigationMenu>
             <NavigationMenuList>
@@ -121,7 +119,7 @@ export function Header() {
                 </NavLink>
               </SheetClose>
               <SheetClose asChild>
-                <NavLink to="/about" className="rounded-md px-3 py-3 text-base font-medium text-white/85 hover:bg-white/5">
+                <NavLink to="/#about" className="rounded-md px-3 py-3 text-base font-medium text-white/85 hover:bg-white/5">
                   אודות
                 </NavLink>
               </SheetClose>
