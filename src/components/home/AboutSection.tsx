@@ -6,40 +6,10 @@ import { MagneticWrap } from '@/components/shared/MagneticWrap'
 import { SectionMotif } from '@/components/shared/SectionMotif'
 import { Reveal, RevealItem } from '@/components/shared/Reveal'
 import { siteConfig } from '@/data/siteConfig'
-import sagiPortrait from '@/assets/about/sagi-portrait.data'
 
 export function AboutSection() {
   return (
     <div id="about">
-      <section className="relative overflow-hidden bg-black/40 py-20 text-white backdrop-blur-sm sm:py-28">
-        <div className="container relative grid gap-12 lg:grid-cols-2 lg:items-center">
-          <Reveal className="space-y-4">
-            <span className="inline-block text-sm font-semibold uppercase tracking-wide text-gold-light">
-              אודות
-            </span>
-            <h2 className="text-4xl font-extrabold tracking-[-0.02em] text-white sm:text-5xl">עו״ד שגיא ויין</h2>
-            <p className="text-lg leading-relaxed text-white/80">
-              עורך דין נדל״ן, מלווה יחידים, משפחות ומשקיעים בעסקאות נדל״ן — מבדיקת חוזה
-              ראשונית ועד סגירת העסקה. בונה נוכחות דיגיטלית וחינוך משפטי לציבור הרחב תחת
-              השם האישי שלו, מתוך אמונה שכל אדם צריך להבין על מה הוא חותם.
-            </p>
-          </Reveal>
-          <Reveal delay={0.15} className="relative mx-auto flex w-full max-w-sm">
-            <div className="absolute -inset-4 rounded-2xl bg-gold-metallic bg-[length:200%_auto] opacity-30 blur-2xl animate-gradient-x" />
-            <div className="gradient-border relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-gold/30 shadow-gold-lg">
-              <img
-                src={sagiPortrait}
-                alt="עו״ד שגיא ויין"
-                className="h-full w-full object-cover object-top"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent p-5 pt-12">
-                <span className="font-display text-lg font-semibold text-white">עו״ד שגיא ויין</span>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       <section className="bg-black/30 py-20 backdrop-blur-sm">
         <Reveal stagger className="container grid gap-8 sm:grid-cols-3">
           {[

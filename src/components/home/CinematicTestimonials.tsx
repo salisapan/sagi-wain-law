@@ -3,7 +3,6 @@ import { Scale } from 'lucide-react'
 
 import { Reveal } from '@/components/shared/Reveal'
 import { SectionMotif } from '@/components/shared/SectionMotif'
-import { TrustStats } from '@/components/shared/TrustStats'
 import { TestimonialsColumn } from '@/components/ui/testimonials-columns-1'
 import { testimonials } from '@/data/testimonials'
 
@@ -21,10 +20,6 @@ export function CinematicTestimonials() {
             עדויות לקוחות
           </span>
           <h2 className="font-display text-3xl font-medium text-[#fff6ed] sm:text-5xl">מה אומרים הלקוחות</h2>
-        </Reveal>
-
-        <Reveal delay={0.1} className="mt-10">
-          <TrustStats />
         </Reveal>
 
         <div className="mt-14 flex max-h-[740px] justify-center gap-5 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]">

@@ -8,14 +8,16 @@ import { BuildingParallax } from '@/components/cinematic/BuildingParallax'
 import { cn } from '@/lib/utils'
 import { easeOut } from '@/lib/motion'
 import { cinematicSlides } from '@/lib/cinematicContent'
+import sagiPortrait from '@/assets/about/sagi-portrait.data'
 
-// Contiguous, no gaps — every point in the 900vh scroll track has an active
+// Contiguous, no gaps — every point in the scroll track has an active
 // slide, so the background never scrolls past with the text area blank.
 const ACTIVE_RANGES: [number, number][] = [
-  [0, 0.25],
-  [0.25, 0.5],
-  [0.5, 0.75],
-  [0.75, 1.001],
+  [0, 0.2],
+  [0.2, 0.4],
+  [0.4, 0.6],
+  [0.6, 0.8],
+  [0.8, 1.001],
 ]
 
 function activeIndexFromProgress(progress: number): number | null {
@@ -82,8 +84,8 @@ export function CinematicSlides() {
   })
 
   return (
-    <div ref={containerRef} data-cinematic-track className="relative h-[500vh] sm:h-[700vh] lg:h-[900vh]">
-      <div className="sticky top-0 flex h-dvh w-full flex-col justify-end overflow-hidden px-6 pb-10 sm:px-10 lg:px-16">
+    <div ref={containerRef} data-cinematic-track className="relative h-[625vh] sm:h-[875vh] lg:h-[1125vh]">
+      <div className="sticky top-0 h-dvh w-full overflow-hidden px-6 sm:px-10 lg:px-16">
         <BuildingParallax scrollYProgress={scrollYProgress} />
 
         <div className="pointer-events-none absolute inset-y-0 start-8 z-20 hidden flex-col items-start justify-center gap-7 lg:start-14 lg:flex">
@@ -121,26 +123,56 @@ export function CinematicSlides() {
           return (
             <div
               key={slide.id}
-              className={`absolute inset-x-0 bottom-[12%] transition-opacity duration-500 ${
+              className={`absolute inset-x-0 top-1/2 -translate-y-1/2 transition-opacity duration-500 ${
                 active ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
               }`}
             >
-              <div className="me-auto ms-0 max-w-3xl rounded-3xl border border-white/5 bg-black/35 p-6 backdrop-blur-md sm:p-8 sm:pe-16">
+              <div
+                className={cn(
+                  'me-auto ms-0 rounded-3xl border border-white/5 bg-black/35 p-6 backdrop-blur-md sm:p-8',
+                  slide.portrait ? 'max-w-2xl sm:pe-8' : 'max-w-3xl sm:pe-16',
+                )}
+              >
                 <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.3em] text-gold-200">
                   {slide.label}
                 </span>
 
-                <KineticTitle text={slide.title} active={active} />
+                {slide.portrait ? (
+                  <div className="grid gap-6 sm:grid-cols-[9rem_1fr] sm:items-center">
+                    <div className="gradient-border mx-auto aspect-[4/5] w-32 shrink-0 overflow-hidden rounded-2xl border border-gold/30 shadow-gold-lg sm:w-full">
+                      <img
+                        src={sagiPortrait}
+                        alt="עו״ד שגיא ויין"
+                        className="h-full w-full object-cover object-top"
+                      />
+                    </div>
+                    <div>
+                      <KineticTitle text={slide.title} active={active} />
+                      <motion.p
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={active ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                        transition={{ duration: 0.8, ease: easeOut, delay: 0.4 }}
+                        className="mt-4 text-base leading-relaxed text-white/90 [text-shadow:0_2px_12px_rgba(0,0,0,0.6)] sm:text-lg"
+                      >
+                        {slide.columnA}
+                      </motion.p>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <KineticTitle text={slide.title} active={active} />
 
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={active ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                  transition={{ duration: 0.8, ease: easeOut, delay: 0.4 }}
-                  className="mt-6 grid gap-4 text-base leading-relaxed text-white/90 [text-shadow:0_2px_12px_rgba(0,0,0,0.6)] sm:grid-cols-2 sm:text-lg"
-                >
-                  <p>{slide.columnA}</p>
-                  <p>{slide.columnB}</p>
-                </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={active ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                      transition={{ duration: 0.8, ease: easeOut, delay: 0.4 }}
+                      className="mt-6 grid gap-4 text-base leading-relaxed text-white/90 [text-shadow:0_2px_12px_rgba(0,0,0,0.6)] sm:grid-cols-2 sm:text-lg"
+                    >
+                      <p>{slide.columnA}</p>
+                      <p>{slide.columnB}</p>
+                    </motion.div>
+                  </>
+                )}
 
                 {slide.cta && (
                   <motion.div

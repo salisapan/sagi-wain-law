@@ -8,9 +8,20 @@ export interface CinematicSlideContent {
   columnA: string
   columnB: string
   cta?: { label: string; href: string }
+  /** Renders the portrait beside columnA instead of the two-column text grid. */
+  portrait?: boolean
 }
 
 export const cinematicSlides: CinematicSlideContent[] = [
+  {
+    id: 'slide-0',
+    label: 'אודות',
+    title: 'עו״ד שגיא ויין',
+    portrait: true,
+    columnA:
+      'עורך דין נדל״ן, מלווה יחידים, משפחות ומשקיעים בעסקאות נדל״ן — מבדיקת חוזה ראשונית ועד סגירת העסקה. בונה נוכחות דיגיטלית וחינוך משפטי לציבור הרחב תחת השם האישי שלו, מתוך אמונה שכל אדם צריך להבין על מה הוא חותם.',
+    columnB: '',
+  },
   {
     id: 'slide-1',
     label: 'היכרות',
