@@ -19,7 +19,7 @@ export function PageHero({ eyebrow, title, description, children }: PageHeroProp
               {eyebrow}
             </span>
           )}
-          <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">{title}</h1>
+          <h1 className="text-4xl font-extrabold tracking-[-0.02em] text-white sm:text-5xl">{title}</h1>
           {description && <p className="text-lg leading-relaxed text-white/80">{description}</p>}
           {children}
         </div>

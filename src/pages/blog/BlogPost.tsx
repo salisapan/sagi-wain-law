@@ -26,7 +26,7 @@ export default function BlogPost() {
             כל המאמרים
           </Link>
 
-          <h1 className="mt-6 font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+          <h1 className="mt-6 font-display text-3xl font-extrabold tracking-[-0.02em] text-white sm:text-4xl">
             {article.title}
           </h1>
 
@@ -74,7 +74,7 @@ export default function BlogPost() {
             <div className="mt-10 space-y-10">
               {article.sections.map((section, i) => (
                 <section key={i}>
-                  <h2 className="flex items-baseline gap-3 font-display text-xl font-bold tracking-tight text-white sm:text-2xl">
+                  <h2 className="flex items-baseline gap-3 font-display text-xl font-bold tracking-[-0.01em] text-white sm:text-2xl">
                     <span className="text-base font-normal text-gold-light/70">{String(i + 1).padStart(2, '0')}</span>
                     {section.heading}
                   </h2>

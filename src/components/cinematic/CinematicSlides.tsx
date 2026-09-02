@@ -32,7 +32,7 @@ function KineticTitle({ text, active }: { text: string; active: boolean }) {
   let charCounter = 0
 
   return (
-    <h1 className="font-display text-4xl font-semibold leading-[1.1] tracking-tight text-[#fff6ed] [text-shadow:0_4px_24px_rgba(0,0,0,0.85)] sm:text-5xl lg:text-6xl">
+    <h1 className="font-display text-4xl font-semibold leading-[1.1] tracking-[-0.03em] text-[#fff6ed] [text-shadow:0_4px_24px_rgba(0,0,0,0.85)] sm:text-5xl lg:text-6xl">
       {words.map((word, wordIndex) => {
         const chars = Array.from(word)
         const wordStartIndex = charCounter

@@ -12,7 +12,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Frank Ruhl Libre"', 'serif'],
+        display: ['Rubik', 'Assistant', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
         sans: ['Assistant', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
       },
       colors: {
@@ -86,6 +86,11 @@ export default {
         navy: '0 20px 60px -18px rgba(0,0,0,0.6)',
         'navy-lg': '0 30px 90px -20px rgba(0,0,0,0.75)',
         sapphire: '0 20px 60px -18px rgba(27,58,107,0.5)',
+        // Neutral, layered elevation — reserved for surfaces at rest; color
+        // shadows (gold/navy above) stay reserved for actionable accents.
+        'elevation-1': '0 1px 2px rgba(0,0,0,0.3), 0 1px 6px -1px rgba(0,0,0,0.25)',
+        'elevation-2': '0 4px 12px rgba(0,0,0,0.28), 0 16px 40px -12px rgba(0,0,0,0.45)',
+        'elevation-3': '0 8px 24px rgba(0,0,0,0.3), 0 30px 70px -20px rgba(0,0,0,0.55)',
       },
       backgroundImage: {
         'gold-metallic':

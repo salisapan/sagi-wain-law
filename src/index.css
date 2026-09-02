@@ -34,7 +34,7 @@
     --input: 216 15% 18%;
     --ring: 216 56% 42%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
   }
 }
 
@@ -67,7 +67,7 @@
   h2,
   h3,
   h4 {
-    @apply font-display font-bold tracking-tight;
+    @apply font-display font-bold tracking-[-0.02em];
   }
 }
 

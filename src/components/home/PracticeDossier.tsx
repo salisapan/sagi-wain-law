@@ -24,7 +24,7 @@ export function PracticeDossier() {
           {practiceAreas.map((area) => {
             const open = openSlug === area.slug
             return (
-              <RevealItem key={area.slug}>
+              <RevealItem key={area.slug} premium>
                 <div className="group relative">
                   <div
                     aria-hidden
@@ -34,7 +34,7 @@ export function PracticeDossier() {
                     type="button"
                     onClick={() => setOpenSlug(open ? null : area.slug)}
                     aria-expanded={open}
-                    className="relative flex w-full flex-col items-start rounded-lg border border-white/10 bg-white/[0.03] p-6 text-start backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-gold/30 hover:bg-white/[0.06] hover:shadow-gold"
+                    className="relative flex w-full flex-col items-start rounded-lg border border-white/10 bg-white/[0.03] p-6 text-start backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-gold/30 hover:bg-white/[0.06] hover:shadow-elevation-3"
                   >
                     <area.icon className="h-8 w-8 text-gold-light" strokeWidth={1.5} />
                     <h3 className="mt-4 font-display text-lg font-semibold text-white">{area.navTitle}</h3>

@@ -84,7 +84,7 @@ export default function ServicePage() {
           </div>
 
           <Reveal as="section" className="space-y-6">
-            <div className="gradient-border rounded-lg border border-gold/30 bg-white/[0.03] p-6 backdrop-blur-md shadow-gold">
+            <div className="gradient-border rounded-lg border border-gold/30 bg-white/[0.03] p-6 backdrop-blur-md shadow-elevation-2">
               <h3 className="font-display text-lg font-semibold text-white">רוצים לבדוק את המקרה שלכם?</h3>
               <p className="mt-2 text-sm leading-relaxed text-white/70">
                 פגישת היכרות ראשונית ללא עלות — נבין יחד מה נכון לעשות בעסקה שלכם.

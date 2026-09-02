@@ -23,7 +23,7 @@ export default function About() {
             <span className="inline-block text-sm font-semibold uppercase tracking-wide text-gold-light">
               אודות
             </span>
-            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">עו״ד שגיא ויין</h1>
+            <h1 className="text-4xl font-extrabold tracking-[-0.02em] text-white sm:text-5xl">עו״ד שגיא ויין</h1>
             <p className="text-lg leading-relaxed text-white/80">
               עורך דין נדל״ן, מלווה יחידים, משפחות ומשקיעים בעסקאות נדל״ן — מבדיקת חוזה
               ראשונית ועד סגירת העסקה. בונה נוכחות דיגיטלית וחינוך משפטי לציבור הרחב תחת
@@ -66,7 +66,7 @@ export default function About() {
             },
           ].map(({ icon: Icon, title, text }) => (
             <RevealItem key={title}>
-              <div className="gradient-border h-full rounded-lg border border-white/10 bg-white/[0.03] p-6 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:bg-white/[0.06] hover:shadow-gold">
+              <div className="gradient-border h-full rounded-lg border border-white/10 bg-white/[0.03] p-6 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:bg-white/[0.06] hover:shadow-elevation-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-metallic bg-[length:200%_auto] shadow-gold">
                   <Icon className="h-6 w-6 text-navy" strokeWidth={1.75} />
                 </div>
@@ -81,7 +81,7 @@ export default function About() {
       <section className="relative overflow-hidden bg-black/10 py-20">
         <SectionMotif icon={ScrollText} className="-end-10 -top-14 h-72 w-72 rotate-12 sm:h-96 sm:w-96" />
         <Reveal className="container relative max-w-3xl space-y-6">
-          <h2 className="text-3xl font-extrabold tracking-tight text-white">איך אני עובד</h2>
+          <h2 className="text-3xl font-extrabold tracking-[-0.02em] text-white">איך אני עובד</h2>
           <p className="leading-relaxed text-white/70">
             כל עסקת נדל״ן מתחילה בהבנה — של הצרכים שלכם, של הסיכונים בעסקה הספציפית, ושל מה
             שבאמת חשוב לכם להשיג. אני מאמין בליווי אישי וזמין, בהסברים בשפה פשוטה במקום

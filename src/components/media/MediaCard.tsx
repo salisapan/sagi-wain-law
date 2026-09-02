@@ -36,7 +36,7 @@ export function MediaCard({ item, featured = false }: { item: MediaItem; feature
       whileHover={{ y: -6 }}
       style={{ rotateX, rotateY, transformStyle: 'preserve-3d', perspective: 1000 }}
       transition={{ type: 'spring', stiffness: 250, damping: 20 }}
-      className="group gradient-border relative block h-full w-full overflow-hidden rounded-2xl border border-border/60 shadow-sm transition-shadow duration-500 hover:shadow-gold-lg"
+      className="group gradient-border relative block h-full w-full overflow-hidden rounded-2xl border border-border/60 shadow-sm transition-shadow duration-500 hover:shadow-elevation-3"
     >
       <img
         src={item.thumbnail}

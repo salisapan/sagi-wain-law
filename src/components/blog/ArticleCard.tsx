@@ -7,7 +7,7 @@ import type { Article } from '@/types/content'
 export function ArticleCard({ article }: { article: Article }) {
   return (
     <Link to={`/articles/${article.slug}`} className="group block h-full">
-      <Card className="gradient-border h-full border-border/60 transition-all duration-500 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 hover:shadow-gold">
+      <Card className="gradient-border h-full border-border/60 transition-all duration-500 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 hover:shadow-elevation-3">
         <CardHeader>
           <CardTitle>{article.title}</CardTitle>
         </CardHeader>

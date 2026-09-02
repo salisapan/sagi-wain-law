@@ -24,7 +24,7 @@ export default function BlogIndex() {
           {articles.length > 0 ? (
             <Reveal stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {articles.map((article) => (
-                <RevealItem key={article.slug}>
+                <RevealItem key={article.slug} premium>
                   <ArticleCard article={article} />
                 </RevealItem>
               ))}
