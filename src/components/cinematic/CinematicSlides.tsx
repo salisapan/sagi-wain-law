@@ -9,7 +9,7 @@ import { SignatureDraw } from '@/components/shared/SignatureDraw'
 import { cn } from '@/lib/utils'
 import { easeOut } from '@/lib/motion'
 import { cinematicSlides } from '@/lib/cinematicContent'
-import sagiPortrait from '@/assets/about/sagi-portrait.data'
+import sagiPortrait from '@/assets/about/sagi-portrait.jpg'
 
 // Contiguous, no gaps — every point in the scroll track has an active
 // slide, so the background never scrolls past with the text area blank.

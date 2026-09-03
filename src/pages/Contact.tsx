@@ -6,7 +6,7 @@ import { ContactForm } from '@/components/contact/ContactForm'
 import { Reveal, RevealItem } from '@/components/shared/Reveal'
 import { SignatureDraw } from '@/components/shared/SignatureDraw'
 import { siteConfig } from '@/data/siteConfig'
-import sagiPortrait from '@/assets/about/sagi-portrait.data'
+import sagiPortrait from '@/assets/about/sagi-portrait.jpg'
 
 export default function Contact() {
   return (

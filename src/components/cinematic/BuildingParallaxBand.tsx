@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
-import buildingPhoto from '@/assets/home/building-parallax.data'
+import buildingPhoto from '@/assets/home/building-parallax.jpg'
 import { cn } from '@/lib/utils'
 
 /**

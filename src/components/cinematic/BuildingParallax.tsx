@@ -1,6 +1,6 @@
 import { motion, useTransform, type MotionValue } from 'framer-motion'
 
-import buildingPhoto from '@/assets/home/building-parallax.data'
+import buildingPhoto from '@/assets/home/building-parallax.jpg'
 import { BlueprintOverlay } from '@/components/cinematic/BlueprintOverlay'
 
 /**

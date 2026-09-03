@@ -1,12 +1,19 @@
+import { lazy, Suspense } from 'react'
+
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { WhatsAppButton } from '@/components/layout/WhatsAppButton'
 import { AccessibilityWidget } from '@/components/layout/AccessibilityWidget'
 import { AnimatedOutlet } from '@/components/layout/AnimatedOutlet'
 import { ScrollProgressBar } from '@/components/layout/ScrollProgressBar'
-import { CinematicScene } from '@/components/cinematic/CinematicScene'
 import { CinematicGrid } from '@/components/cinematic/CinematicGrid'
 import { Toaster } from '@/components/ui/sonner'
+
+// Three.js is the single heaviest dependency in the bundle and is purely
+// decorative, so it loads after the rest of the shell instead of blocking it.
+const CinematicScene = lazy(() =>
+  import('@/components/cinematic/CinematicScene').then((m) => ({ default: m.CinematicScene })),
+)
 
 export function Layout() {
   return (
@@ -18,7 +25,9 @@ export function Layout() {
         דלג לתוכן הראשי
       </a>
       <ScrollProgressBar />
-      <CinematicScene />
+      <Suspense fallback={null}>
+        <CinematicScene />
+      </Suspense>
       <CinematicGrid />
       <Header />
       <main id="main" tabIndex={-1} className="relative z-10 flex-1 outline-none">

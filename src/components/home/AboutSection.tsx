@@ -6,7 +6,7 @@ import { MagneticWrap } from '@/components/shared/MagneticWrap'
 import { SectionMotif } from '@/components/shared/SectionMotif'
 import { Reveal, RevealItem } from '@/components/shared/Reveal'
 import { siteConfig } from '@/data/siteConfig'
-import sagiAvatar from '@/assets/about/sagi-avatar.data'
+import sagiAvatar from '@/assets/about/sagi-avatar.jpg'
 
 export function AboutSection() {
   return (
